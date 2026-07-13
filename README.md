@@ -1,60 +1,64 @@
-# Project video previews
+# johnpaulguisijan-png.github.io
 
-Each project card looks for a short screen recording here. Until you add one, the card shows a
-branded "Preview loading" placeholder — so nothing looks broken and you can add these one at a time.
-Start with the three featured cases at the top of the Work section; they get the most attention.
+Portfolio site for **John Paul Guisijan** — Shopify growth engineer.
+Single-file static site, no build step. GitHub Pages serves `index.html` from the repo root.
 
-## Filenames (must match exactly)
+## Files
 
-| Project                | Video                 | Poster still         |
-|------------------------|-----------------------|----------------------|
-| King & Fifth *(featured)* | `king-and-fifth.mp4` | `king-and-fifth.jpg` |
-| Joovy *(featured)*     | `joovy.mp4`           | `joovy.jpg`          |
-| CosMedical *(featured)*| `cosmedical.mp4`      | `cosmedical.jpg`     |
-| Omada Golf             | `omadagolf.mp4`       | `omadagolf.jpg`      |
-| Baby Delight           | `babydelight.mp4`     | `babydelight.jpg`    |
-| Zenbodi                | `zenbodi.mp4`         | `zenbodi.jpg`        |
-| Stencil Stop           | `stencilstop.mp4`     | `stencilstop.jpg`    |
-| ElectroGum             | `electrogum.mp4`      | `electrogum.jpg`     |
-| Phantom Farms Brewing  | `phantomfarms.mp4`    | `phantomfarms.jpg`   |
-| PowerPets              | `powerpets.mp4`       | `powerpets.jpg`      |
-| ShopMachete            | `shopmachete.mp4`     | `shopmachete.jpg`    |
-| BoughtNex              | `boughtnex.mp4`       | `boughtnex.jpg`      |
-| Petspace               | `petspace.mp4`        | `petspace.jpg`       |
+| File | Purpose |
+|------|---------|
+| `index.html` | The entire site — HTML, CSS, and JS in one file. |
+| `johnpaul.jpg` | Portrait used in the hero. |
+| `*.jpg` | Live-store screenshots (`joovy.jpg`, `king-and-fifth.jpg`, …). |
 
-## How to record one (about 5 minutes per project)
+**All files live at the repo root — no subfolders.** GitHub Pages is case-sensitive, so keep every
+filename lowercase, exactly as referenced in `index.html`.
 
-1. Open the live site in Chrome at 1440×900, hide bookmarks, use an incognito window so no
-   extensions or profile chrome appear.
-2. Record 8–12 seconds: land on the homepage, scroll smoothly through the hero and one
-   product/collection section, hover a product, open the cart. Slow, deliberate movement —
-   fast scrolling looks cheap.
-3. Trim to the best 8–12 seconds. It loops, so make the first and last frame similar.
+## Adding video previews
 
-Windows: `Win + Alt + R` (Xbox Game Bar) or ShareX. Mac: `Cmd + Shift + 5`.
+Each project card plays a short screen recording on hover (desktop) or when scrolled into view
+(mobile). It falls back to the screenshot if no video exists, so you can add these one at a time.
 
-## Compress before you ship
+Upload an `.mp4` to the repo root using the **same base name** as the screenshot:
 
-Aim for **under 2 MB per clip** — the whole point is that the site stays fast. With ffmpeg:
+| Project | Screenshot | Video to add |
+|---------|-----------|--------------|
+| King & Fifth *(featured)* | `king-and-fifth.jpg` | `king-and-fifth.mp4` |
+| Joovy *(featured)* | `joovy.jpg` | `joovy.mp4` |
+| CosMedical *(featured)* | `cosmedical.jpg` | `cosmedical.mp4` |
+| Omada Golf | `omadagolf.jpg` | `omadagolf.mp4` |
+| Baby Delight | `babydelight.jpg` | `babydelight.mp4` |
+| Zenbodi | `zenbodi.jpg` | `zenbodi.mp4` |
+| Stencil Stop | `stencilstop.jpg` | `stencilstop.mp4` |
+| ElectroGum | `electrogum.jpg` | `electrogum.mp4` |
+| Phantom Farms Brewing | `phantomfarms.jpg` | `phantomfarms.mp4` |
+| PowerPets | `powerpets.jpg` | `powerpets.mp4` |
+| BoughtNex | `boughtnex.jpg` | `boughtnex.mp4` |
+| ShopMachete | *(none — site is password-protected)* | `shopmachete.mp4` |
+| Petspace | *(none — no public URL)* | `petspace.mp4` |
+
+### Recording one
+
+Open the live store in Chrome at 1440×900 in an incognito window (no bookmarks bar, no extensions).
+Record 8–12 seconds of slow, deliberate scrolling through the hero and a product section. It loops,
+so make the first and last frame similar. Windows: `Win + Alt + R`. Mac: `Cmd + Shift + 5`.
+
+### Compressing (do this — keep the site fast)
+
+Target **under 2 MB per clip**. GitHub Pages has a soft 1 GB repo limit, but the real constraint is
+your visitors' patience.
 
 ```bash
 ffmpeg -i raw.mp4 -vf "scale=1280:-2,fps=24" -c:v libx264 -crf 30 -preset slow \
-  -movflags +faststart -an king-and-fifth.mp4
+  -movflags +faststart -an joovy.mp4
 ```
 
-`-an` strips the audio track (the videos are muted anyway, so audio is pure dead weight).
+`-an` strips audio (the videos are muted anyway).
 
-## Poster stills
+## Before you publish — outstanding items
 
-Grab a frame from the same recording so the still and the video match:
-
-```bash
-ffmpeg -i king-and-fifth.mp4 -vf "select=eq(n\,0)" -q:v 3 king-and-fifth.jpg
-```
-
-## Playback behaviour (already built into the page)
-
-- Video is only downloaded once the card scrolls into view — nothing loads above the fold.
-- Desktop: plays on hover, pauses on leave.
-- Mobile/touch: plays while the card is on screen, pauses when it scrolls away.
-- Missing or broken file: the placeholder (or poster still) stays put, silently.
+- **Testimonials are placeholders.** The three quotes attributed to "Andrew K.", "Sarah J." and
+  "Marcus V." are not real client statements. Search `data-placeholder="testimonial"` in
+  `index.html`. Replace with genuine quotes or delete the section.
+- **Some metrics are illustrative.** Search `data-edit="metric"` and swap in real figures from
+  Shopify Analytics / Lighthouse.
