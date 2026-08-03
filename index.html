@@ -22,20 +22,25 @@
   ===========================================================================
   NOTES FOR JOHN PAUL
   ---------------------------------------------------------------------------
-  1. VIDEO PREVIEWS — drop screen recordings into /media using these names:
-        king-and-fifth.mp4   cosmedical.mp4   powerpets.mp4
-        shopmachete.mp4      boughtnex.mp4    gpexpress.mp4
-        ygc.mp4              seafront.mp4     petspace.mp4
-     Matching still frames (poster + fallback) go in as .jpg with the same names.
-     If a file is missing, the card silently falls back to the still image —
-     nothing breaks. See README.md for how to record and compress them.
+  1. VIDEO PREVIEWS — every project card plays a screen recording on hover if one
+     exists. Drop .mp4 files at the repo ROOT using the same base name as the
+     screenshot. Featured (3): babydelight, omadagolf, stencilstop.
+     More work grid: vestnetz, homirie, cozeymaison, requipco, kopelit, joovy,
+     zenbodi, electrogum, phantomfarms (brewing), phantomfarms-com (farm/bakery).
+     If a video is missing, the screenshot stays — nothing breaks.
+     See README.md for how to record and compress them.
 
-  2. TESTIMONIALS — the three quotes below are PLACEHOLDERS. They are NOT real
-     client statements. Search for  data-placeholder="testimonial"  and replace
-     with genuine quotes before publishing, or delete the section.
+  2. TESTIMONIALS — the fabricated quotes have been REMOVED. The "Why brands work
+     with me" section sells on substance instead. When you have REAL client quotes
+     (Upwork/Fiverr reviews, LinkedIn recommendations, emailed feedback with
+     permission), a ready-to-fill template is commented inside that section — search
+     for "REAL TESTIMONIALS GO HERE".
 
-  3. METRICS — figures marked  data-edit="metric"  are illustrative. Swap in
-     your real numbers (Shopify Analytics / Lighthouse) before publishing.
+  3. METRICS — figures marked  data-edit="metric"  are illustrative placeholders.
+     Swap in your real numbers before relying on them publicly.
+
+  4. CV — search "CV SLOT" in the About section to drop in real credentials once
+     your CV is finalised.
   ===========================================================================
 -->
 
@@ -403,6 +408,15 @@ section{position:relative;z-index:1;padding-block:var(--section)}
   transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 
 .grid-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,26px)}
+/* "More work" runs 5-across (2 rows of 5) on desktop; id-scoped so it always
+   wins over the generic .grid-tiles breakpoints. Steps down 5 → 3 → 2 → 1. */
+#more .grid-tiles{grid-template-columns:repeat(5,1fr);gap:clamp(14px,1.4vw,20px)}
+#more .tile__meta{flex-wrap:wrap;gap:4px 10px}
+#more .tile__name{font-size:15px}
+#more .tile p{font-size:12.5px;margin-top:7px}
+@media(max-width:1100px){#more .grid-tiles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){#more .grid-tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){#more .grid-tiles{grid-template-columns:repeat(1,1fr)}}
 .tile .frame{aspect-ratio:16/11}
 .tile__meta{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:16px}
 .tile__name{font-family:var(--f-display);font-weight:600;font-size:16px}
@@ -423,6 +437,15 @@ section{position:relative;z-index:1;padding-block:var(--section)}
 .quote__av{width:38px;height:38px;border-radius:50%;flex:none;display:grid;place-items:center;
   border:1px solid var(--gold-dim);background:var(--gold-ghost);color:var(--gold);
   font-family:var(--f-mono);font-size:12px}
+/* "Why me" pillar cards — reuse the quote grid, different content shape */
+.pillar{border:1px solid var(--line);background:var(--panel);padding:clamp(28px,3vw,38px);
+  transition:border-color .45s,transform .5s cubic-bezier(.2,.8,.2,1),background .45s}
+.pillar:hover{border-color:var(--gold-dim);transform:translateY(-4px);background:var(--panel-2)}
+.pillar__ico{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--gold-dim);
+  border-radius:50%;background:var(--gold-ghost);color:var(--gold);margin-bottom:22px}
+.pillar__ico svg{width:20px;height:20px}
+.pillar h3{font-size:18px;margin-bottom:10px;letter-spacing:-.01em}
+.pillar p{font-size:14px;color:var(--ink-2);line-height:1.65}
 .quote__n{font-weight:500;font-size:14.5px;display:block}
 .quote__r{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:2px;display:block}
 
@@ -656,25 +679,26 @@ section{position:relative;z-index:1;padding-block:var(--section)}
       <div class="hero__copy">
         <div class="pill rv">
           <span class="pill__dot"></span>
-          <span class="eyebrow">Available — 2 project slots this quarter</span>
+          <span class="eyebrow">Booking Shopify projects — 2 slots open this quarter</span>
         </div>
 
         <h1 class="display rv">
-          Shopify storefronts that turn attention into <span class="serif gold-text">revenue</span>.
+          Shopify stores, engineered to <span class="serif gold-text">convert</span>.
         </h1>
 
         <p class="lead rv">
-          I'm John Paul Guisijan — a full-stack developer specialising in Shopify. For over four years I've built
-          and optimised storefronts for brands across the United States, Singapore, and the Philippines: custom
-          themes, conversion engineering, and the speed work that quietly pays for itself.
+          I'm John Paul Guisijan — a Shopify developer and conversion specialist for premium home, lifestyle,
+          and DTC brands across Europe and the US. I build custom-coded storefronts that load fast, feel
+          expensive, and turn more of your existing traffic into revenue. No page builders, no bloated apps —
+          just clean Liquid and a relentless focus on what sells.
         </p>
 
         <div class="hero__cta rv">
           <a href="#contact" class="btn btn--gold">
-            Start a project
+            Book a discovery call
             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#work" class="btn btn--ghost">View selected work</a>
+          <a href="#work" class="btn btn--ghost">See case studies</a>
         </div>
 
         <p class="hero__note rv">
@@ -688,32 +712,32 @@ section{position:relative;z-index:1;padding-block:var(--section)}
         <div class="portrait">
           <div class="portrait__frame"></div>
           <div class="portrait__img">
-            <img src="johnpaul.jpg" alt="John Paul Guisijan, Shopify growth engineer" width="800" height="1000" fetchpriority="high" decoding="async">
+            <img src="johnpaul.jpg" alt="John Paul Guisijan, Shopify developer and conversion specialist" width="800" height="1000" fetchpriority="high" decoding="async">
           </div>
-          <div class="portrait__tag">John Paul Guisijan · Philippines</div>
+          <div class="portrait__tag">John Paul Guisijan · Shopify Developer</div>
         </div>
         <div class="portrait__creds">
-          <span><b>4+</b> years building commerce</span>
-          <span><b>US · SG · PH</b> clients</span>
+          <span><b>4+</b> years in Shopify</span>
+          <span><b>UK · EU · US</b> brands</span>
         </div>
       </aside>
     </div>
 
     <div class="marquee rv">
-      <div class="marquee__label">Brands &amp; teams I've built for</div>
+      <div class="marquee__label">Trusted to build &amp; optimise storefronts for</div>
       <div class="marquee__track" id="marqueeTrack">
-        <span class="marquee__item">King &amp; Fifth</span>
-        <span class="marquee__item">CosMedical Technologies</span>
-        <span class="marquee__item">PowerPets</span>
+        <span class="marquee__item">Vestnetz</span>
+        <span class="marquee__item">Homirie</span>
+        <span class="marquee__item">Cozey Maison</span>
+        <span class="marquee__item">Requipco</span>
+        <span class="marquee__item">Kopelit</span>
         <span class="marquee__item">Joovy</span>
-        <span class="marquee__item">Baby Delight</span>
         <span class="marquee__item">Omada Golf</span>
+        <span class="marquee__item">Baby Delight</span>
         <span class="marquee__item">Zenbodi</span>
         <span class="marquee__item">Stencil Stop</span>
         <span class="marquee__item">ElectroGum</span>
         <span class="marquee__item">Phantom Farms Brewing</span>
-        <span class="marquee__item">ShopMachete</span>
-        <span class="marquee__item">BoughtNex</span>
       </div>
     </div>
   </div>
@@ -725,15 +749,15 @@ section{position:relative;z-index:1;padding-block:var(--section)}
     <div class="stats rv" id="stats">
       <div class="stat">
         <div class="stat__k"><span class="counter" data-to="4">0</span>+ yrs</div>
-        <div class="stat__l">Shopify &amp; full-stack</div>
+        <div class="stat__l">Specialised in Shopify</div>
       </div>
       <div class="stat">
-        <div class="stat__k"><span class="counter" data-to="13">0</span>+</div>
-        <div class="stat__l">Storefronts shipped &amp; maintained</div>
+        <div class="stat__k"><span class="counter" data-to="15">0</span>+</div>
+        <div class="stat__l">Stores built &amp; optimised</div>
       </div>
       <div class="stat">
-        <div class="stat__k"><span class="counter" data-to="3">0</span></div>
-        <div class="stat__l">Markets — US · SG · PH</div>
+        <div class="stat__k"><span class="counter" data-to="100">0</span>%</div>
+        <div class="stat__l">Custom-coded — no page builders</div>
       </div>
       <div class="stat">
         <div class="stat__k">&lt;<span class="counter" data-to="24">0</span>h</div>
@@ -747,23 +771,24 @@ section{position:relative;z-index:1;padding-block:var(--section)}
 <section id="work" class="band">
   <div class="wrap">
     <div class="sect-head rv">
-      <span class="eyebrow">Selected work</span>
-      <h2 class="sect">Storefronts, <span class="serif gold-text">in motion</span>.</h2>
-      <p class="lead">Hover any project to watch it run. Real clients, live URLs — golf equipment, baby gear,
-        medical-grade skincare, apparel, wellness, and craft beer.</p>
+      <span class="eyebrow">Featured case studies</span>
+      <h2 class="sect">Storefronts built to <span class="serif gold-text">sell</span>.</h2>
+      <p class="lead">A close look at three brands I've helped build and grow — infant gear, golf equipment, and
+        custom-made products — each engineered around custom development and conversion. Hover to preview; click
+        through to see each one trading.</p>
     </div>
 
-    <!-- Case 1 — King & Fifth -->
+    <!-- Case 1 — Baby Delight -->
     <article class="case rv">
       <div class="case__media">
-        <div class="frame" data-video="king-and-fifth.mp4">
+        <div class="frame" data-video="babydelight.mp4">
           <div class="frame__bar">
             <span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span>
-            <span class="frame__url">kingandfifth.com</span>
+            <span class="frame__url">babydelight.com</span>
           </div>
           <div class="frame__stage">
-            <div class="frame__ph"><span>King &amp; Fifth</span><em>View live site</em></div>
-            <img src="king-and-fifth.jpg" alt="King and Fifth Shopify storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            <div class="frame__ph"><span>Baby Delight</span><em>View live site</em></div>
+            <img src="babydelight.jpg" alt="Baby Delight Shopify storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
           </div>
           <div class="frame__scrim"></div>
           <div class="frame__badge"><span class="pulse"></span> Live preview</div>
@@ -771,37 +796,38 @@ section{position:relative;z-index:1;padding-block:var(--section)}
       </div>
       <div class="case__body">
         <div class="case__idx">01 — Shopify · United States</div>
-        <h3>King &amp; Fifth</h3>
-        <div class="case__meta">Premium headwear &amp; accessories</div>
-        <p>An eCommerce store for stylish hats and beanies, built around product variety and lifestyle appeal.
-          I rebuilt the theme for a mobile-first shopping flow, tightened the product pages, and stripped weight
-          out of the storefront so browsing feels instant on a phone.</p>
+        <h3>Baby Delight</h3>
+        <div class="case__meta">Infant, nursery &amp; on-the-go baby gear</div>
+        <p>An established US baby-gear brand where trust is the entire sale — parents research safety long before
+          price. I focused the storefront on credibility: clear product pages that answer safety objections before
+          they're asked, strong review and rating proof, and a fast, mobile-first flow, since most baby-gear
+          browsing happens one-handed on a phone. The result reads as reassuring, established, and easy to buy from.</p>
         <div class="kpis">
-          <div class="kpi"><div class="kpi__k" data-edit="metric">+38%</div><div class="kpi__l">Mobile conversion</div></div>
-          <div class="kpi"><div class="kpi__k" data-edit="metric">2.4s</div><div class="kpi__l">Load time saved</div></div>
+          <div class="kpi"><div class="kpi__k" data-edit="metric">Trust-first</div><div class="kpi__l">Product-page design</div></div>
+          <div class="kpi"><div class="kpi__k" data-edit="metric">Mobile-first</div><div class="kpi__l">Buying flow</div></div>
         </div>
         <div class="stack">
-          <span class="chip">Shopify 2.0</span><span class="chip">Liquid</span>
-          <span class="chip">Theme customization</span><span class="chip">Mobile UX</span>
+          <span class="chip">Shopify</span><span class="chip">Theme customization</span>
+          <span class="chip">CRO</span><span class="chip">Mobile UX</span>
         </div>
-        <a href="https://www.kingandfifth.com" target="_blank" rel="noopener" class="link-gold">
+        <a href="https://www.babydelight.com/" target="_blank" rel="noopener" class="link-gold">
           Visit live store
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
       </div>
     </article>
 
-    <!-- Case 2 — Joovy -->
+    <!-- Case 2 — Omada Golf -->
     <article class="case rv">
       <div class="case__media">
-        <div class="frame" data-video="joovy.mp4">
+        <div class="frame" data-video="omadagolf.mp4">
           <div class="frame__bar">
             <span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span>
-            <span class="frame__url">joovy.com</span>
+            <span class="frame__url">omadagolf.com</span>
           </div>
           <div class="frame__stage">
-            <div class="frame__ph"><span>Joovy</span><em>View live site</em></div>
-            <img src="joovy.jpg" alt="Joovy Shopify storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            <div class="frame__ph"><span>Omada Golf</span><em>View live site</em></div>
+            <img src="omadagolf.jpg" alt="Omada Golf Shopify storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
           </div>
           <div class="frame__scrim"></div>
           <div class="frame__badge"><span class="pulse"></span> Live preview</div>
@@ -809,37 +835,38 @@ section{position:relative;z-index:1;padding-block:var(--section)}
       </div>
       <div class="case__body">
         <div class="case__idx">02 — Shopify · United States</div>
-        <h3>Joovy</h3>
-        <div class="case__meta">Strollers &amp; juvenile products</div>
-        <p>A large, variant-heavy catalogue of strollers and baby gear where every product decision is a
-          considered purchase. The work centres on making a complex catalogue feel simple — clear product
-          hierarchy, fast collection browsing, and a storefront that holds up under a wide product range.</p>
+        <h3>Omada Golf</h3>
+        <div class="case__meta">Golf performance equipment</div>
+        <p>A performance golf brand selling to a considered, high-intent buyer who compares specs before purchasing.
+          The storefront leans on product storytelling — feature-led pages that explain why the engineering matters —
+          wrapped in a clean, confident design that signals a premium, credible brand. Built for fast browsing and a
+          frictionless path from the product story straight to cart.</p>
         <div class="kpis">
-          <div class="kpi"><div class="kpi__k" data-edit="metric">Large</div><div class="kpi__l">Catalogue scale</div></div>
-          <div class="kpi"><div class="kpi__k" data-edit="metric">Mobile</div><div class="kpi__l">First priority</div></div>
+          <div class="kpi"><div class="kpi__k" data-edit="metric">Product-led</div><div class="kpi__l">Feature storytelling</div></div>
+          <div class="kpi"><div class="kpi__k" data-edit="metric">Premium</div><div class="kpi__l">Brand UX</div></div>
         </div>
         <div class="stack">
-          <span class="chip">Shopify</span><span class="chip">Catalogue UX</span>
-          <span class="chip">Performance</span><span class="chip">Theme development</span>
+          <span class="chip">Shopify</span><span class="chip">Custom theme</span>
+          <span class="chip">Product storytelling</span><span class="chip">CRO</span>
         </div>
-        <a href="https://www.joovy.com/" target="_blank" rel="noopener" class="link-gold">
+        <a href="https://www.omadagolf.com/" target="_blank" rel="noopener" class="link-gold">
           Visit live store
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
       </div>
     </article>
 
-    <!-- Case 3 — CosMedical -->
+    <!-- Case 3 — Stencil Stop -->
     <article class="case rv">
       <div class="case__media">
-        <div class="frame" data-video="cosmedical.mp4">
+        <div class="frame" data-video="stencilstop.mp4">
           <div class="frame__bar">
             <span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span>
-            <span class="frame__url">cosmedical.co</span>
+            <span class="frame__url">stencilstop.com</span>
           </div>
           <div class="frame__stage">
-            <div class="frame__ph"><span>CosMedical</span><em>View live site</em></div>
-            <img src="cosmedical.jpg" alt="CosMedical Technologies Shopify storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            <div class="frame__ph"><span>Stencil Stop</span><em>View live site</em></div>
+            <img src="stencilstop.jpg" alt="Stencil Stop Shopify storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
           </div>
           <div class="frame__scrim"></div>
           <div class="frame__badge"><span class="pulse"></span> Live preview</div>
@@ -847,20 +874,21 @@ section{position:relative;z-index:1;padding-block:var(--section)}
       </div>
       <div class="case__body">
         <div class="case__idx">03 — Shopify · United States</div>
-        <h3>CosMedical Technologies</h3>
-        <div class="case__meta">Medical-grade skincare</div>
-        <p>The official storefront of a U.S. medical-grade skincare company. I maintain and optimise the theme —
-          UI/UX enhancements, content updates, CTA improvements, and performance work — so a clinical brand reads
-          as premium and trustworthy at every step of the funnel.</p>
+        <h3>Stencil Stop</h3>
+        <div class="case__meta">Custom, made-to-order stencils</div>
+        <p>Custom and made-to-order stencils — any design, any size — which puts product configuration at the heart
+          of the buying experience. The challenge is keeping a highly customisable product simple to order. I focused
+          on a clear configuration and upload flow with custom product-page logic, so a complex made-to-order process
+          feels effortless and shoppers don't abandon at the customiser.</p>
         <div class="kpis">
-          <div class="kpi"><div class="kpi__k" data-edit="metric">+22%</div><div class="kpi__l">CTA engagement</div></div>
-          <div class="kpi"><div class="kpi__k" data-edit="metric">99</div><div class="kpi__l">Lighthouse target</div></div>
+          <div class="kpi"><div class="kpi__k" data-edit="metric">Made-to-order</div><div class="kpi__l">Custom flow</div></div>
+          <div class="kpi"><div class="kpi__k" data-edit="metric">Config UX</div><div class="kpi__l">Built to convert</div></div>
         </div>
         <div class="stack">
-          <span class="chip">Shopify</span><span class="chip">UI/UX</span>
-          <span class="chip">CRO</span><span class="chip">Performance</span>
+          <span class="chip">Shopify</span><span class="chip">Custom development</span>
+          <span class="chip">Product configurator</span><span class="chip">CRO</span>
         </div>
-        <a href="https://cosmedical.co" target="_blank" rel="noopener" class="link-gold">
+        <a href="https://stencilstop.com/" target="_blank" rel="noopener" class="link-gold">
           Visit live store
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
@@ -869,59 +897,112 @@ section{position:relative;z-index:1;padding-block:var(--section)}
   </div>
 </section>
 
-<!-- ============================== THE FULL ROSTER ============================== -->
-<section id="roster">
+<!-- ============================== MORE WORK ============================== -->
+<section id="more">
   <div class="wrap">
-    <div class="roster__head rv">
-      <div class="sect-head" style="margin-bottom:0">
-        <span class="eyebrow">The full roster</span>
-        <h2 class="sect">Ten more stores, <span class="serif gold-text">all still trading</span>.</h2>
-        <p class="lead">Every one is a live commercial storefront — not a concept, not a demo. Slide through,
-          then click any card to see it running in the wild.</p>
-      </div>
-      <div class="slider__nav">
-        <span class="slider__count"><b id="rosterAt">01</b> / 10</span>
-        <button class="slider__btn" id="rosterPrev" aria-label="Previous projects">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 5 8 12l7 7"/></svg>
-        </button>
-        <button class="slider__btn" id="rosterNext" aria-label="Next projects">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg>
-        </button>
-      </div>
+    <div class="sect-head rv">
+      <span class="eyebrow">More work</span>
+      <h2 class="sect">A broader <span class="serif gold-text">body of work</span>.</h2>
+      <p class="lead">More live Shopify storefronts I've built, customised, or optimised — across premium home and
+        lighting brands in the UK and Europe, plus DTC, wellness, and food &amp; beverage. Hover to preview; click any
+        card to visit the store.</p>
     </div>
 
-    <div class="slider">
-      <div class="track" id="rosterTrack">
+    <div class="grid-tiles">
 
       <article class="tile rv">
-        <a class="tile__link" href="https://www.omadagolf.com/" target="_blank" rel="noopener">
-          <div class="frame" data-video="omadagolf.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">omadagolf.com</span></div>
+        <a class="tile__link" href="https://vestnetz.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="vestnetz.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">vestnetz.com</span></div>
             <div class="frame__stage">
-              <div class="frame__ph"><span>Omada Golf</span><em>View live site</em></div>
-              <img src="omadagolf.jpg" alt="Omada Golf storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+              <div class="frame__ph"><span>Vestnetz</span><em>View live site</em></div>
+              <img src="vestnetz.jpg" alt="Vestnetz storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
             </div>
             <div class="frame__scrim"></div>
             <div class="frame__badge"><span class="pulse"></span> Live</div>
           </div>
-          <div class="tile__meta"><span class="tile__name">Omada Golf</span><span class="tile__type">Shopify · US</span></div>
-          <p>Golf performance equipment — product storytelling and a storefront built to convert a considered, high-intent buyer.</p>
+          <div class="tile__meta"><span class="tile__name">Vestnetz</span><span class="tile__type">Shopify · UK</span></div>
+          <p>Premium home, lighting &amp; décor — a conversion-led theme with a trust-first product page and wallet checkout.</p>
         </a>
       </article>
 
       <article class="tile rv">
-        <a class="tile__link" href="https://www.babydelight.com/" target="_blank" rel="noopener">
-          <div class="frame" data-video="babydelight.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">babydelight.com</span></div>
+        <a class="tile__link" href="https://homirie.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="homirie.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">homirie.com</span></div>
             <div class="frame__stage">
-              <div class="frame__ph"><span>Baby Delight</span><em>View live site</em></div>
-              <img src="babydelight.jpg" alt="Baby Delight storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+              <div class="frame__ph"><span>Homirie</span><em>View live site</em></div>
+              <img src="homirie.jpg" alt="Homirie storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
             </div>
             <div class="frame__scrim"></div>
             <div class="frame__badge"><span class="pulse"></span> Live</div>
           </div>
-          <div class="tile__meta"><span class="tile__name">Baby Delight</span><span class="tile__type">Shopify · US</span></div>
-          <p>Infant &amp; nursery products. A trust-first storefront — safety-conscious parents need clarity before they need persuasion.</p>
+          <div class="tile__meta"><span class="tile__name">Homirie</span><span class="tile__type">Shopify · IT / EU</span></div>
+          <p>Designer lighting across four markets — tiered volume discounts and localised, multi-currency UX.</p>
+        </a>
+      </article>
+
+      <article class="tile rv">
+        <a class="tile__link" href="https://cozeymaison.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="cozeymaison.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">cozeymaison.com</span></div>
+            <div class="frame__stage">
+              <div class="frame__ph"><span>Cozey Maison</span><em>View live site</em></div>
+              <img src="cozeymaison.jpg" alt="Cozey Maison storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            </div>
+            <div class="frame__scrim"></div>
+            <div class="frame__badge"><span class="pulse"></span> Live</div>
+          </div>
+          <div class="tile__meta"><span class="tile__name">Cozey Maison</span><span class="tile__type">Shopify · NL / EU</span></div>
+          <p>Broad European home &amp; décor catalogue in six languages, with a checkout upsell that lifts order value.</p>
+        </a>
+      </article>
+
+      <article class="tile rv">
+        <a class="tile__link" href="https://requipco.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="requipco.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">requipco.com</span></div>
+            <div class="frame__stage">
+              <div class="frame__ph"><span>Requipco</span><em>View live site</em></div>
+              <img src="requipco.jpg" alt="Requipco storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            </div>
+            <div class="frame__scrim"></div>
+            <div class="frame__badge"><span class="pulse"></span> Live</div>
+          </div>
+          <div class="tile__meta"><span class="tile__name">Requipco</span><span class="tile__type">Shopify · NL</span></div>
+          <p>Climate appliances with a custom product-finder quiz that guides shoppers to the right unit.</p>
+        </a>
+      </article>
+
+      <article class="tile rv">
+        <a class="tile__link" href="https://kopelit.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="kopelit.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">kopelit.com</span></div>
+            <div class="frame__stage">
+              <div class="frame__ph"><span>Kopelit</span><em>View live site</em></div>
+              <img src="kopelit.jpg" alt="Kopelit storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            </div>
+            <div class="frame__scrim"></div>
+            <div class="frame__badge"><span class="pulse"></span> Live</div>
+          </div>
+          <div class="tile__meta"><span class="tile__name">Kopelit</span><span class="tile__type">Shopify · UK</span></div>
+          <p>Nordic lighting &amp; garden décor — a content-rich, feature-led theme built around smart-lighting products.</p>
+        </a>
+      </article>
+
+      <article class="tile rv">
+        <a class="tile__link" href="https://www.joovy.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="joovy.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">joovy.com</span></div>
+            <div class="frame__stage">
+              <div class="frame__ph"><span>Joovy</span><em>View live site</em></div>
+              <img src="joovy.jpg" alt="Joovy storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            </div>
+            <div class="frame__scrim"></div>
+            <div class="frame__badge"><span class="pulse"></span> Live</div>
+          </div>
+          <div class="tile__meta"><span class="tile__name">Joovy</span><span class="tile__type">Shopify · US</span></div>
+          <p>Strollers &amp; juvenile gear — a large, variant-heavy catalogue made simple and fast to browse.</p>
         </a>
       </article>
 
@@ -937,23 +1018,7 @@ section{position:relative;z-index:1;padding-block:var(--section)}
             <div class="frame__badge"><span class="pulse"></span> Live</div>
           </div>
           <div class="tile__meta"><span class="tile__name">Zenbodi</span><span class="tile__type">Shopify · Wellness</span></div>
-          <p>Wellness and body-care. Elegant typography, generous whitespace, and a calm buying flow that matches the brand's promise.</p>
-        </a>
-      </article>
-
-      <article class="tile rv">
-        <a class="tile__link" href="https://stencilstop.com/" target="_blank" rel="noopener">
-          <div class="frame" data-video="stencilstop.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">stencilstop.com</span></div>
-            <div class="frame__stage">
-              <div class="frame__ph"><span>Stencil Stop</span><em>View live site</em></div>
-              <img src="stencilstop.jpg" alt="Stencil Stop storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
-            </div>
-            <div class="frame__scrim"></div>
-            <div class="frame__badge"><span class="pulse"></span> Live</div>
-          </div>
-          <div class="tile__meta"><span class="tile__name">Stencil Stop</span><span class="tile__type">Shopify · Custom products</span></div>
-          <p>Custom and made-to-order stencils — a storefront where product configuration has to stay simple, or the sale is lost.</p>
+          <p>Wellness &amp; body-care — elegant typography and a calm buying flow that matches the brand.</p>
         </a>
       </article>
 
@@ -969,7 +1034,7 @@ section{position:relative;z-index:1;padding-block:var(--section)}
             <div class="frame__badge"><span class="pulse"></span> Live</div>
           </div>
           <div class="tile__meta"><span class="tile__name">ElectroGum</span><span class="tile__type">Shopify · DTC</span></div>
-          <p>Functional chewing gum, sold direct. A single-product storefront built around one job: get the first order, then the subscription.</p>
+          <p>Functional gum sold direct — a single-product storefront built to win the first order.</p>
         </a>
       </article>
 
@@ -978,83 +1043,33 @@ section{position:relative;z-index:1;padding-block:var(--section)}
           <div class="frame" data-video="phantomfarms.mp4">
             <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">phantomfarmsbrewing.com</span></div>
             <div class="frame__stage">
-              <div class="frame__ph"><span>Phantom Farms</span><em>View live site</em></div>
+              <div class="frame__ph"><span>Phantom Farms Brewing</span><em>View live site</em></div>
               <img src="phantomfarms.jpg" alt="Phantom Farms Brewing storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
             </div>
             <div class="frame__scrim"></div>
             <div class="frame__badge"><span class="pulse"></span> Live</div>
           </div>
           <div class="tile__meta"><span class="tile__name">Phantom Farms Brewing</span><span class="tile__type">Shopify · Craft beer</span></div>
-          <p>A craft brewery with a strong visual identity — the storefront had to carry the brand's atmosphere without slowing down.</p>
+          <p>A craft brewery storefront that carries a strong visual identity without slowing down.</p>
         </a>
       </article>
 
       <article class="tile rv">
-        <a class="tile__link" href="https://www.powerpets.com.sg" target="_blank" rel="noopener">
-          <div class="frame" data-video="powerpets.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">powerpets.com.sg</span></div>
+        <a class="tile__link" href="https://phantomfarms.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="phantomfarms-com.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">phantomfarms.com</span></div>
             <div class="frame__stage">
-              <div class="frame__ph"><span>PowerPets</span><em>View live site</em></div>
-              <img src="powerpets.jpg" alt="PowerPets Singapore storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+              <div class="frame__ph"><span>Phantom Farms</span><em>View live site</em></div>
+              <img src="phantomfarms-com.jpg" alt="Phantom Farms farm and bakery storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
             </div>
             <div class="frame__scrim"></div>
             <div class="frame__badge"><span class="pulse"></span> Live</div>
           </div>
-          <div class="tile__meta"><span class="tile__name">PowerPets</span><span class="tile__type">Shopify · Singapore</span></div>
-          <p>Pet nutrition &amp; supplies. Theme customisation, product management, and responsive optimisation for a fast-growing catalogue.</p>
+          <div class="tile__meta"><span class="tile__name">Phantom Farms</span><span class="tile__type">Shopify · Farm &amp; bakery</span></div>
+          <p>A Rhode Island farm, bakery &amp; garden center — online ordering wired into a warm, seasonal storefront.</p>
         </a>
       </article>
 
-      <article class="tile rv">
-        <a class="tile__link" href="https://shopmachete.myshopify.com/" target="_blank" rel="noopener">
-          <div class="frame" data-video="shopmachete.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">shopmachete.com</span></div>
-            <div class="frame__stage">
-              <div class="frame__ph"><span>ShopMachete</span><em>View live site</em></div>
-              <img src="shopmachete.jpg" alt="ShopMachete storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
-            </div>
-            <div class="frame__scrim"></div>
-            <div class="frame__badge"><span class="pulse"></span> Live</div>
-          </div>
-          <div class="tile__meta"><span class="tile__name">ShopMachete</span><span class="tile__type">Shopify · US</span></div>
-          <p>Fashion &amp; lifestyle accessories — theme customisation, UI/UX fixes, product-page enhancements, and ongoing performance work.</p>
-        </a>
-      </article>
-
-      <article class="tile rv">
-        <a class="tile__link" href="https://www.boughtnex.com" target="_blank" rel="noopener">
-          <div class="frame" data-video="boughtnex.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">boughtnex.com</span></div>
-            <div class="frame__stage">
-              <div class="frame__ph"><span>BoughtNex</span><em>View live site</em></div>
-              <img src="boughtnex.jpg" alt="BoughtNex marketplace" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
-            </div>
-            <div class="frame__scrim"></div>
-            <div class="frame__badge"><span class="pulse"></span> Live</div>
-          </div>
-          <div class="tile__meta"><span class="tile__name">BoughtNex</span><span class="tile__type">Marketplace · Singapore</span></div>
-          <p>A multi-category online marketplace — tech, lifestyle, and consumer goods sold through a single storefront.</p>
-        </a>
-      </article>
-
-      <article class="tile rv">
-        <div class="tile__link">
-          <div class="frame" data-video="petspace.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">petspace</span></div>
-            <div class="frame__stage">
-              <div class="frame__ph"><span>Petspace</span><em>View live site</em></div>
-              <img src="petspace.jpg" alt="Petspace social platform" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
-            </div>
-            <div class="frame__scrim"></div>
-            <div class="frame__badge"><span class="pulse"></span> Preview</div>
-          </div>
-          <div class="tile__meta"><span class="tile__name">Petspace</span><span class="tile__type">Platform · Web + App</span></div>
-          <p>A social platform for pets across web and mobile — built and maintained as web developer using Angular, CodeIgniter, and MySQL.</p>
-        </div>
-      </article>
-
-      </div>
-      <div class="slider__rail"><span class="slider__thumb" id="rosterThumb"></span></div>
     </div>
   </div>
 </section>
@@ -1113,20 +1128,26 @@ section{position:relative;z-index:1;padding-block:var(--section)}
 <section id="about">
   <div class="wrap about">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">The approach</span>
+      <span class="eyebrow" style="display:block;margin-bottom:18px">About</span>
       <h2 class="sect" style="margin-bottom:24px">
-        I don't just build stores — I engineer storefronts that <span class="serif gold-text">move revenue</span>.
+        A Shopify partner who thinks like a <span class="serif gold-text">store owner</span>.
       </h2>
       <p class="lead" style="margin-bottom:20px">
-        Commerce is more than a checkout button. It's user behaviour, technical constraint, and brand storytelling
-        pulling against each other. My job is to hold all three at once — so the store loads instantly, reads as
-        premium, and converts consistently.
+        I'm John Paul Guisijan. For four years I've done one thing: build and grow Shopify stores. Not a bit of
+        everything — Shopify, deeply. Custom Liquid, conversion optimisation, performance, and the checkout and
+        payment work that decides whether traffic turns into orders.
+      </p>
+      <p class="lead" style="margin-bottom:20px">
+        Most of my recent work is with premium home, lighting, and lifestyle brands across the UK and Europe —
+        multi-market, multi-currency storefronts where the details compound: a faster page, a clearer product page,
+        a smarter upsell. I write clean, maintainable code and treat your store as a business that has to make money,
+        not a design exercise.
       </p>
       <p class="lead">
-        Over four years of shipping for clients across the US, Singapore, and the Philippines — from golf equipment
-        and baby gear to skincare, apparel, and craft beer. That range is the point: it's why I can reason about your
-        store as a business system, not just a theme.
+        If you already have traffic but too few of those visitors buy, that's exactly the problem I'm built to solve.
       </p>
+      <!-- CV SLOT: once John Paul's CV is attached, add real credentials here —
+           education, certifications, notable roles, standout achievements. -->
     </div>
 
     <div class="rv">
@@ -1152,41 +1173,65 @@ section{position:relative;z-index:1;padding-block:var(--section)}
   </div>
 </section>
 
-<!-- ============================== TESTIMONIALS ============================== -->
-<!-- ⚠ PLACEHOLDER QUOTES — replace with real client words or delete this section. -->
-<section class="band" data-placeholder="testimonial">
+<!-- ============================== WHY ME ============================== -->
+<!--
+  The three fabricated quotes that used to live here have been removed — they
+  attributed invented praise to real, named people at real companies, which is a
+  genuine liability once the site is public. When John Paul has REAL client quotes
+  (Upwork/Fiverr reviews, LinkedIn recommendations, or emailed feedback with
+  permission to quote), a ready-to-fill testimonial template is commented at the
+  bottom of this section. Until then, this section sells on substance, not invented praise.
+-->
+<section class="band" id="why">
   <div class="wrap">
-    <div class="sect-head rv" style="text-align:center;max-width:640px;margin-inline:auto">
-      <span class="eyebrow">Client voices</span>
-      <h2 class="sect">The growth <span class="serif gold-text">speaks for itself</span>.</h2>
+    <div class="sect-head rv" style="text-align:center;max-width:680px;margin-inline:auto">
+      <span class="eyebrow">Why brands work with me</span>
+      <h2 class="sect">Not a generalist. A <span class="serif gold-text">Shopify specialist</span>.</h2>
+      <p class="lead">Four reasons store owners hand me the keys to a storefront that's already making money.</p>
     </div>
 
     <div class="grid-q">
-      <figure class="quote rv">
-        <div class="quote__mark">&ldquo;</div>
-        <p>The mobile conversion lift we saw in the first 30 days was hard to believe. The attention to detail in the code is what sets this work apart.</p>
-        <figcaption class="quote__who">
-          <span class="quote__av">AK</span>
-          <span><span class="quote__n">Andrew K.</span><span class="quote__r">Founder · King &amp; Fifth</span></span>
-        </figcaption>
-      </figure>
-      <figure class="quote rv">
-        <div class="quote__mark">&ldquo;</div>
-        <p>Building a store that actually feels premium is rare. Our average order value went up because the shopping experience finally matched our price point.</p>
-        <figcaption class="quote__who">
-          <span class="quote__av">SJ</span>
-          <span><span class="quote__n">Sarah J.</span><span class="quote__r">Operations · PowerPets</span></span>
-        </figcaption>
-      </figure>
-      <figure class="quote rv">
-        <div class="quote__mark">&ldquo;</div>
-        <p>The most technically sound Shopify developer we've partnered with. Clean code, on time, and our clients never know he isn't in-house.</p>
-        <figcaption class="quote__who">
-          <span class="quote__av">MV</span>
-          <span><span class="quote__n">Marcus V.</span><span class="quote__r">Director · Agency Partner</span></span>
-        </figcaption>
-      </figure>
+      <article class="pillar rv">
+        <span class="pillar__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
+        <h3>Custom-coded, not dragged-and-dropped</h3>
+        <p>Clean, hand-written Liquid and JavaScript — no bloated page builders slowing your store down. Your team gets code they can actually maintain.</p>
+      </article>
+      <article class="pillar rv">
+        <span class="pillar__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18M7 15l3.5-4 3 2.5L21 7"/></svg></span>
+        <h3>Conversion is the point</h3>
+        <p>Every decision is measured against one question: does this help more visitors buy? Product pages, checkout, and speed are tuned to revenue, not vanity.</p>
+      </article>
+      <article class="pillar rv">
+        <span class="pillar__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/><circle cx="12" cy="12" r="10"/></svg></span>
+        <h3>Built for international brands</h3>
+        <p>Multi-market, multi-currency, multi-language storefronts done properly — the same rigour whether you sell in one country or six.</p>
+      </article>
+      <article class="pillar rv">
+        <span class="pillar__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <h3>Safe hands, clear communication</h3>
+        <p>Staging-first builds, full backups, and daily written updates. Your live store is never at risk, and you always know exactly where things stand.</p>
+      </article>
     </div>
+
+    <p class="nudge rv" style="margin-top:48px">
+      Want to see it on your own store? <a href="https://wa.me/639627294885?text=Hi%20John%20Paul%20—%20I'd%20like%20a%20quick%20look%20at%20my%20Shopify%20store." target="_blank" rel="noopener">Send me your URL on WhatsApp</a> and I'll reply with two or three things I'd fix first.
+    </p>
+
+    <!--
+      ▼▼ REAL TESTIMONIALS GO HERE ▼▼  When you have genuine client quotes, delete
+      this comment wrapper and the section will show them. One card per quote:
+
+      <div class="grid-q" style="margin-top:26px">
+        <figure class="quote">
+          <div class="quote__mark">&ldquo;</div>
+          <p>[Exact client words — keep it specific: what changed, what result.]</p>
+          <figcaption class="quote__who">
+            <span class="quote__av">[AB]</span>
+            <span><span class="quote__n">[Full Name]</span><span class="quote__r">[Role · Brand · source e.g. Upwork]</span></span>
+          </figcaption>
+        </figure>
+      </div>
+    -->
   </div>
 </section>
 
@@ -1215,16 +1260,17 @@ section{position:relative;z-index:1;padding-block:var(--section)}
   <div class="wrap">
     <div class="sect-head rv" style="text-align:center;max-width:640px;margin-inline:auto">
       <span class="eyebrow">Engagements</span>
-      <h2 class="sect">Partner for <span class="serif gold-text">performance</span>.</h2>
-      <p class="lead">Three ways to work together. Every engagement starts with a free 30-minute call.</p>
+      <h2 class="sect">An investment in <span class="serif gold-text">revenue</span>, not a line item.</h2>
+      <p class="lead">Three clear ways to work together — each scoped to pay for itself. Final pricing is tailored to your
+        store after a free discovery call; the figures below are typical starting points.</p>
     </div>
 
     <div class="grid-price">
       <article class="tier rv">
         <div class="tier__name">Store Audit</div>
         <div class="tier__price"><span class="cur">$</span>800</div>
-        <div class="tier__from">One-time · 5–7 day turnaround</div>
-        <p class="tier__desc">A full technical &amp; CRO audit with a prioritised action plan to fix what's costing you sales.</p>
+        <div class="tier__from">One-time · from · 5–7 day turnaround</div>
+        <p class="tier__desc">Know exactly what's leaking revenue. A full technical &amp; CRO audit with a prioritised, do-this-next action plan.</p>
         <ul class="tier__list">
           <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Speed &amp; Core Web Vitals analysis</li>
           <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Full UX &amp; funnel audit</li>
@@ -1239,7 +1285,7 @@ section{position:relative;z-index:1;padding-block:var(--section)}
         <div class="tier__name">Theme Build</div>
         <div class="tier__price"><span class="cur">$</span>3,000<span class="per">+</span></div>
         <div class="tier__from">Project · 4–6 weeks</div>
-        <p class="tier__desc">A bespoke, high-performance theme built for conversion and speed — designed and engineered end to end.</p>
+        <p class="tier__desc">A bespoke, high-performance storefront engineered end to end for conversion, speed, and a brand that finally looks the part.</p>
         <ul class="tier__list">
           <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Custom Shopify 2.0 sections</li>
           <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Mobile-first, conversion-led UX</li>
@@ -1253,7 +1299,7 @@ section{position:relative;z-index:1;padding-block:var(--section)}
         <div class="tier__name">Growth Retainer</div>
         <div class="tier__price tier__price--range"><span class="cur">$</span>1,500<span class="dash">–</span><span class="cur">$</span>1,700<span class="per">/mo</span></div>
         <div class="tier__from">Monthly · rolling, cancel anytime</div>
-        <p class="tier__desc">Ongoing engineering and CRO support for brands that need a dedicated Shopify partner on call.</p>
+        <p class="tier__desc">Your dedicated Shopify partner on call — continuous development, CRO testing, and improvements that compound month over month.</p>
         <ul class="tier__list">
           <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Priority support &amp; rapid fixes</li>
           <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Continuous A/B testing</li>
@@ -1356,7 +1402,7 @@ section{position:relative;z-index:1;padding-block:var(--section)}
     <div class="foot__bot">
       <span>© 2026 John Paul Guisijan — Shopify Growth Engineer</span>
       <span>WhatsApp +63 962 729 4885 · Telegram @johnpaulguisijan</span>
-      <span>Philippines · Working US &amp; SG hours</span>
+      <span>Working with brands across the UK, Europe &amp; the US</span>
     </div>
   </div>
 </footer>
