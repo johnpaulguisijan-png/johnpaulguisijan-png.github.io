@@ -4,6 +4,9 @@ Portfolio site for **John Paul Guisijan** — Shopify developer & conversion spe
 Single-file static site, no build step. GitHub Pages serves `index.html` from the repo root.
 All assets live at the root (GitHub Pages is case-sensitive — keep filenames lowercase).
 
+`resume.html` is the CV/résumé page (brand-matched, print-to-PDF ready). It's linked from the
+site footer and contact section, and lives at `johnpaulguisijan-png.github.io/resume.html`.
+
 ## Featured case studies (3)
 
 | Brand | Screenshot | Video to add (optional) |

@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>John Paul Guisijan — Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    /* Brand-matched to the portfolio (black · gold · white) but kept LIGHT so it
+       prints cleanly. Deep gold/bronze is used for headings — the bright portfolio
+       gold is too pale to read as text on a light page. */
+    --paper:#FAF9F6;
+    --ink:#1A1A18;
+    --accent:#8A6D1E;
+    --accent-2:#B4912F;
+    --muted:#6A6A66;
+    --rule:#E5DFD1;
+    --banner-bg:#F3EEE1;
+    --banner-border:#E3DAC6;
+    --btn-bg:#161615;
+    --btn-ink:#FAF9F6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    margin:0;
+    padding:2.5rem 1rem 5rem;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;}
+
+  .toolbar{
+    max-width:800px;
+    margin:0 auto 2.5rem;
+    background:var(--banner-bg);
+    border:1px solid var(--banner-border);
+    border-radius:10px;
+    padding:1.1rem 1.4rem;
+  }
+  .toolbar h2{margin:0 0 .35rem;font-size:.95rem;letter-spacing:.02em;color:var(--accent);}
+  .toolbar p{margin:0 0 1rem;font-size:.85rem;color:var(--muted);line-height:1.5;max-width:64ch;}
+  .toolbar .buttons{display:flex;flex-wrap:wrap;gap:.6rem;}
+  .toolbar button{
+    font:inherit;font-size:.82rem;font-weight:600;letter-spacing:.01em;
+    background:var(--btn-bg);color:var(--btn-ink);border:none;border-radius:6px;
+    padding:.6rem 1rem;cursor:pointer;
+  }
+  .toolbar button.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent-2);}
+  .toolbar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .toolbar .backlink{margin-left:auto;align-self:center;font-size:.82rem;font-weight:600;color:var(--accent);text-decoration:none;}
+  .toolbar .backlink:hover{text-decoration:underline;}
+
+  .page-label{
+    max-width:800px;margin:0 auto .75rem;font-size:.72rem;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  }
+
+  .page{
+    max-width:800px;margin:0 auto 2rem;background:var(--paper);
+    border:1px solid var(--rule);border-radius:4px;padding:2.6rem 2.8rem;
+  }
+  .page + .page-label{margin-top:3rem;}
+
+  header.id{margin-bottom:1.1rem;}
+  header.id h1{margin:0 0 .15rem;font-size:1.85rem;font-weight:700;letter-spacing:.01em;color:var(--ink);}
+  .role-title{margin:0 0 .5rem;font-size:.98rem;font-weight:600;color:var(--accent);}
+  .contact-line{margin:0;font-size:.82rem;color:var(--muted);}
+  .contact-line a{color:inherit;text-decoration:none;}
+  .contact-line a:hover{text-decoration:underline;}
+
+  section{margin-top:1.3rem;}
+  section h2{
+    font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 .5rem;padding-bottom:.3rem;border-bottom:1px solid var(--rule);
+  }
+  section p{margin:0 0 .5rem;font-size:.87rem;line-height:1.55;}
+  section p:last-child{margin-bottom:0;}
+
+  .keywords{font-size:.85rem;line-height:1.7;color:var(--ink);}
+
+  .job-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;}
+  .job-head .role{font-weight:700;font-size:.92rem;}
+  .job-head .dates{font-size:.8rem;color:var(--muted);white-space:nowrap;}
+  .job-sub{font-size:.83rem;font-style:italic;color:var(--muted);margin:.1rem 0 .5rem;}
+
+  ul.bullets{margin:.2rem 0 0;padding-left:1.1rem;}
+  ul.bullets li{font-size:.87rem;line-height:1.55;margin-bottom:.4rem;}
+  ul.bullets li:last-child{margin-bottom:0;}
+
+  .industry{margin-bottom:.85rem;}
+  .industry:last-child{margin-bottom:0;}
+  .industry h3{margin:0 0 .3rem;font-size:.78rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);}
+  .industry ul{margin:0;padding-left:1.1rem;}
+  .industry li{font-size:.85rem;line-height:1.5;margin-bottom:.3rem;}
+  .industry li:last-child{margin-bottom:0;}
+  .industry li b{font-weight:700;}
+
+  .skill-group{margin-bottom:.55rem;}
+  .skill-group:last-child{margin-bottom:0;}
+  .skill-group .label{font-weight:700;font-size:.82rem;}
+  .skill-group .items{font-size:.85rem;color:var(--ink);}
+
+  .edu-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+  .edu-row .school{font-weight:700;font-size:.9rem;}
+  .edu-row .dates{font-size:.8rem;color:var(--muted);white-space:nowrap;}
+  .degree{font-size:.85rem;font-style:italic;color:var(--muted);margin-top:.1rem;}
+
+  .compact-clients{font-size:.85rem;line-height:1.7;}
+  .compact-clients b{color:var(--ink);}
+
+  @media print{
+    .no-print{display:none !important;}
+    body{padding:0;background:#fff;color:#111;}
+    .page{max-width:none;border:none;border-radius:0;margin:0;padding:.35in .1in;background:#fff;}
+    .page-label{display:none;}
+    section h2{color:#8A6D1E;border-bottom-color:#D8CFB8;}
+    .role-title{color:#8A6D1E;}
+    .page-1{page-break-after:always;}
+    body.print-1 .page-2{display:none;}
+    body.print-2 .page-1{display:none;}
+  }
+  @page{margin:.5in;}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <h2>Two resume versions, one file</h2>
+  <p>
+    Version A is a tight one-page cut for recruiter skimming. Version B is a fuller
+    two-page cut with the complete experience list, client portfolio, and categorized
+    skills for ATS parsing and hiring-manager review. Use the buttons to print/export
+    just one version as PDF, or use your browser's print dialog directly.
+  </p>
+  <div class="buttons">
+    <button onclick="printOnly('1')">Export 1-Page Version (PDF)</button>
+    <button onclick="printOnly('2')">Export 2-Page Version (PDF)</button>
+    <button class="secondary" onclick="window.print()">Print Both</button>
+    <a class="backlink" href="index.html">&larr; Back to portfolio</a>
+  </div>
+</div>
+
+<div class="page-label no-print">Version A — 1-Page — Recruiter Skim</div>
+<div class="page page-1">
+  <header class="id">
+    <h1 class="serif">John Paul Guisijan</h1>
+    <p class="role-title">Shopify Developer &amp; Growth Engineer</p>
+    <p class="contact-line">
+      Philippines &nbsp;·&nbsp;
+      <a href="mailto:johnpaulguisijan@gmail.com">johnpaulguisijan@gmail.com</a> &nbsp;·&nbsp;
+      +63 962 729 4885 &nbsp;·&nbsp;
+      <a href="https://linkedin.com/in/john-paul-guisijan-5855781b5">linkedin.com/in/john-paul-guisijan-5855781b5</a> &nbsp;·&nbsp;
+      <a href="https://johnpaulguisijan-png.github.io">johnpaulguisijan-png.github.io</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p>Shopify Developer and Growth Engineer with 4+ years building, customizing, and optimizing Shopify 2.0 storefronts for 15+ eCommerce brands across the United States, the United Kingdom, and Europe. Combines hands-on Liquid theme development and frontend engineering with a conversion-focused, performance-first approach — partnering directly with founders and marketing teams to ship production-ready storefronts across home &amp; lighting, baby products, wellness, sports, food &amp; beverage, and custom products.</p>
+  </section>
+
+  <section>
+    <h2>Core Competencies</h2>
+    <p class="keywords">Shopify 2.0 · Liquid Development · Theme &amp; Storefront Customization · Custom Sections, Templates &amp; Metafields · Shopify Admin API / Storefront API · Webhooks · Shopify CLI · HTML5 · CSS3 · JavaScript (ES6) · Responsive &amp; Mobile-First Development · CRO · UX/UI Optimization · Page Speed &amp; Core Web Vitals · Git / GitHub / GitLab · Stripe · PayPal · Klaviyo · PageFly</p>
+  </section>
+
+  <section>
+    <h2>Professional Experience</h2>
+    <div class="job-head">
+      <span class="role">Independent Shopify Growth Engineer</span>
+      <span class="dates">2022 – Present</span>
+    </div>
+    <p class="job-sub">Remote Contract Projects — International eCommerce Brands</p>
+    <ul class="bullets">
+      <li>Delivered Shopify development, optimization, and growth consulting for 15+ eCommerce brands across the United States, the United Kingdom, and Europe, spanning home &amp; lighting, baby products, wellness, sports, food &amp; beverage, and custom products.</li>
+      <li>Led Shopify 2.0 customization projects — custom Liquid development, sections, templates, and metafields — to support scalable, conversion-focused storefronts.</li>
+      <li>Partnered directly with founders, marketing teams, and designers to translate business requirements into production-ready solutions across concurrent client engagements.</li>
+      <li>Improved storefront performance, mobile responsiveness, and Core Web Vitals through asset optimization, code refinement, and theme enhancements.</li>
+      <li>Optimized product, collection, and navigation experiences to improve product discovery and reduce shopping-flow friction.</li>
+      <li>Resolved technical issues and delivered ongoing maintenance for multiple active, commercially operating storefronts in international markets.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Selected Client Portfolio</h2>
+    <p class="compact-clients">
+      <b>Home, Lighting &amp; Lifestyle (UK &amp; EU):</b> Vestnetz, Homirie, Cozey Maison, Kopelit, Requipco &nbsp;·&nbsp;
+      <b>Baby &amp; Family:</b> Joovy, Baby Delight (USA), GoWithMe &nbsp;·&nbsp;
+      <b>Health &amp; Wellness:</b> Zenbodi, ElectroGum (USA) &nbsp;·&nbsp;
+      <b>Sports:</b> Omada Golf (USA) &nbsp;·&nbsp;
+      <b>Food &amp; Beverage:</b> Phantom Farms, Phantom Farms Brewing &nbsp;·&nbsp;
+      <b>Print &amp; Custom:</b> Stencil Stop &nbsp;·&nbsp;
+      <b>Real Estate:</b> Macari Properties
+    </p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="edu-row">
+      <span class="school">San Pedro College of Business Administration</span>
+      <span class="dates">June 2018 – May 2022</span>
+    </div>
+    <p class="degree">Bachelor of Science in Information Technology</p>
+  </section>
+</div>
+
+<div class="page-label no-print">Version B — 2-Page — ATS &amp; Hiring-Manager Detail</div>
+<div class="page page-2">
+  <header class="id">
+    <h1 class="serif">John Paul Guisijan</h1>
+    <p class="role-title">Shopify Developer &amp; Growth Engineer</p>
+    <p class="contact-line">
+      Philippines &nbsp;·&nbsp;
+      <a href="mailto:johnpaulguisijan@gmail.com">johnpaulguisijan@gmail.com</a> &nbsp;·&nbsp;
+      +63 962 729 4885 &nbsp;·&nbsp;
+      <a href="https://linkedin.com/in/john-paul-guisijan-5855781b5">linkedin.com/in/john-paul-guisijan-5855781b5</a> &nbsp;·&nbsp;
+      <a href="https://johnpaulguisijan-png.github.io">johnpaulguisijan-png.github.io</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p>Shopify Developer and Growth Engineer with 4+ years of experience building, customizing, and optimizing Shopify 2.0 storefronts for 15+ eCommerce brands across the United States, the United Kingdom, and Europe. Specializes in custom Liquid theme development, conversion-focused UX, and storefront performance optimization, working directly with founders, marketing teams, and designers to turn business requirements into production-ready solutions. Experienced across home &amp; lighting, baby products, wellness, sports, food &amp; beverage, custom products, and real estate, including multi-market, multi-currency, and multi-language storefronts — with proven ability to own projects from initial development through long-term maintenance and growth.</p>
+  </section>
+
+  <section>
+    <h2>Core Competencies</h2>
+    <p class="keywords">Shopify 2.0 · Liquid Development · Theme &amp; Storefront Customization · Custom Sections, Templates &amp; Metafields · Shopify Admin API · Storefront API · Webhooks · Shopify CLI · HTML5 · CSS3 · JavaScript (ES6) · Responsive Design · Mobile-First Development · Conversion Rate Optimization (CRO) · UX/UI Optimization · Page Speed Optimization · Core Web Vitals · Product Page Optimization · Collection Page Optimization · Git · GitHub · GitLab · Stripe · PayPal · Klaviyo · Judge.me · PageFly</p>
+  </section>
+
+  <section>
+    <h2>Professional Experience</h2>
+    <div class="job-head">
+      <span class="role">Independent Shopify Growth Engineer</span>
+      <span class="dates">2022 – Present</span>
+    </div>
+    <p class="job-sub">Remote Contract Projects — International eCommerce Brands</p>
+    <p style="font-size:.87rem;color:var(--muted);margin:0 0 .5rem;">Provide Shopify development, optimization, maintenance, and growth-focused consulting for international eCommerce brands.</p>
+    <ul class="bullets">
+      <li>Deliver Shopify development, optimization, maintenance, and growth-focused consulting for 15+ eCommerce brands across the United States, the United Kingdom, and Europe.</li>
+      <li>Build and maintain Shopify storefronts for brands across home &amp; lighting, baby products, wellness, sports, food &amp; beverage, custom products, and real estate.</li>
+      <li>Deliver multi-market, multi-currency, and multi-language storefronts for European home and lighting brands, including tiered discount logic and checkout-level upsells to lift average order value.</li>
+      <li>Lead Shopify 2.0 customization projects involving custom Liquid development, UX enhancements, and full storefront optimization.</li>
+      <li>Engineer custom sections, templates, metafields, and third-party integrations to support scalable, merchandiser-friendly store operations.</li>
+      <li>Improve site usability, mobile responsiveness, and overall customer experience through conversion-focused development practices.</li>
+      <li>Conduct technical audits, resolve bugs, and execute performance-optimization initiatives across multiple concurrently active Shopify stores.</li>
+      <li>Collaborate directly with founders, marketing teams, designers, and stakeholders to translate business requirements into production-ready features.</li>
+      <li>Provide ongoing maintenance and technical support for commercial storefronts operating in international markets.</li>
+      <li>Optimize product pages, collection pages, and navigation to improve product discovery and shopping flow.</li>
+      <li>Strengthen storefront performance through asset optimization, code refinement, and theme-level enhancements.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Selected Client Portfolio</h2>
+
+    <div class="industry">
+      <h3>Home, Lighting &amp; Lifestyle (UK &amp; Europe)</h3>
+      <ul>
+        <li><b>Vestnetz (UK)</b> — Premium home &amp; lighting brand. Conversion-led theme; trust-first product pages; streamlined Klarna, Apple Pay, and Google Pay checkout; ongoing optimization.</li>
+        <li><b>Homirie (Italy / EU)</b> — Designer lighting across multiple European markets. Tiered volume-discount logic; review and rating integration; localized, multi-currency UX.</li>
+        <li><b>Cozey Maison (Netherlands / EU)</b> — Broad home &amp; décor catalogue in six languages. Multi-language, multi-currency architecture; tiered discount ladder and checkout upsell to lift average order value.</li>
+        <li><b>Kopelit (UK)</b> — Nordic lighting &amp; garden décor. Content-rich, feature-led product pages; blog and Instagram UGC integration for SEO and social proof.</li>
+        <li><b>Requipco (Netherlands)</b> — Climate appliances. Custom two-step product-finder quiz and comparison UX; transparent running-cost breakdown for a higher-consideration purchase.</li>
+      </ul>
+    </div>
+
+    <div class="industry">
+      <h3>Baby &amp; Family Products</h3>
+      <ul>
+        <li><b>Joovy (USA)</b> — Storefront support and optimization; user experience improvements; theme customization and maintenance.</li>
+        <li><b>Baby Delight (USA)</b> — Storefront enhancements; mobile shopping experience optimization; technical support and maintenance.</li>
+        <li><b>GoWithMe</b> — Storefront customization and optimization; responsive design improvements.</li>
+      </ul>
+    </div>
+
+    <div class="industry">
+      <h3>Health &amp; Wellness</h3>
+      <ul>
+        <li><b>Zenbodi</b> — Shopify customization and maintenance; customer experience improvements.</li>
+        <li><b>ElectroGum</b> — Storefront enhancements; product presentation optimization.</li>
+      </ul>
+    </div>
+
+    <div class="industry">
+      <h3>Sports &amp; Recreation</h3>
+      <ul>
+        <li><b>Omada Golf (USA)</b> — Shopify theme customization; product page optimization; user experience improvements.</li>
+      </ul>
+    </div>
+
+    <div class="industry">
+      <h3>Food &amp; Beverage</h3>
+      <ul>
+        <li><b>Phantom Farms (USA)</b> — Farm, bakery &amp; garden center storefront. Online-ordering setup and integration; technical maintenance and support.</li>
+        <li><b>Phantom Farms Brewing (USA)</b> — Craft brewery storefront. Store optimization and support; user experience improvements.</li>
+      </ul>
+    </div>
+
+    <div class="industry">
+      <h3>Print &amp; Custom Products</h3>
+      <ul>
+        <li><b>Stencil Stop</b> — Shopify customization; storefront optimization.</li>
+      </ul>
+    </div>
+
+    <div class="industry">
+      <h3>Real Estate</h3>
+      <ul>
+        <li><b>Macari Properties</b> — Website support and customization; frontend enhancements.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skill-group">
+      <span class="label">Shopify Development: </span>
+      <span class="items">Shopify 2.0, Liquid, Custom Sections &amp; Templates, Metafields, Shopify Admin API, Storefront API, Webhooks, Shopify CLI</span>
+    </div>
+    <div class="skill-group">
+      <span class="label">Frontend Development: </span>
+      <span class="items">HTML5, CSS3, JavaScript (ES6), Responsive Design, Mobile-First Development</span>
+    </div>
+    <div class="skill-group">
+      <span class="label">Optimization &amp; CRO: </span>
+      <span class="items">Conversion Rate Optimization (CRO), UX/UI Optimization, Page Speed Optimization, Core Web Vitals, Product Page Optimization, Collection Page Optimization</span>
+    </div>
+    <div class="skill-group">
+      <span class="label">Tools &amp; Integrations: </span>
+      <span class="items">Git, GitHub, GitLab, Shopify CLI, Visual Studio Code, Klaviyo, Judge.me, Stripe, PayPal, PageFly</span>
+    </div>
+    <div class="skill-group">
+      <span class="label">Professional Skills: </span>
+      <span class="items">Client Communication, Requirement Analysis, Project Ownership, Stakeholder Collaboration, Quality Assurance, Problem Solving</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="edu-row">
+      <span class="school">San Pedro College of Business Administration</span>
+      <span class="dates">June 2018 – May 2022</span>
+    </div>
+    <p class="degree">Bachelor of Science in Information Technology</p>
+  </section>
+</div>
+
+<script>
+  function printOnly(which){
+    document.body.classList.add('print-' + which);
+    window.print();
+  }
+  window.addEventListener('afterprint', function(){
+    document.body.classList.remove('print-1', 'print-2');
+  });
+</script>
+</body>
+</html>
