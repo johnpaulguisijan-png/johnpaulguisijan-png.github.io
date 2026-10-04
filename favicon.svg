@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JP">
+  <!-- John Paul Guisijan — monogram favicon.
+       Brand tokens: gold #C9A227, ink #050506 (see :root in index.html).
+       This SVG is the source of truth; the PNG/ICO variants are rendered from it. -->
+  <rect width="64" height="64" rx="14" fill="#C9A227"/>
+  <g fill="none" stroke="#050506" stroke-width="7.5" stroke-linecap="round">
+    <path d="M29.25 18V38.5A7.5 7.5 0 0 1 14.953 41.669"/>
+    <path d="M42.25 46V18A7.5 7.5 0 0 1 42.25 33"/>
+  </g>
+</svg>
