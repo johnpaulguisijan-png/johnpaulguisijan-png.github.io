@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>John Paul Guisijan — Shopify Growth Engineer</title>
-<meta name="description" content="Shopify growth engineer building high-performance storefronts for premium brands in the US, Singapore, and beyond. Custom themes, CRO, speed, and integrations.">
+<title>John Paul Guisijan — Shopify Store &amp; CRO Manager</title>
+<meta name="description" content="Shopify store and CRO manager for US DTC brands. I run live stores end to end — development, CRO, A/B testing, SEO, promotions, and day-to-day operations.">
 <meta name="theme-color" content="#050506">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -13,8 +13,8 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="John Paul Guisijan — Shopify Growth Engineer">
-<meta property="og:description" content="High-performance Shopify storefronts for premium brands. Custom themes, CRO, speed, integrations.">
+<meta property="og:title" content="John Paul Guisijan — Shopify Store &amp; CRO Manager">
+<meta property="og:description" content="I run Shopify stores for US DTC brands end to end — development, CRO, A/B testing, SEO, and growth.">
 <meta property="og:image" content="johnpaul.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,9 +29,10 @@
   ---------------------------------------------------------------------------
   1. VIDEO PREVIEWS — every project card plays a screen recording on hover if one
      exists. Drop .mp4 files at the repo ROOT using the same base name as the
-     screenshot. Featured (3): babydelight, omadagolf, stencilstop.
-     More work grid: vestnetz, homirie, cozeymaison, requipco, kopelit, joovy,
-     zenbodi, electrogum, phantomfarms (brewing), phantomfarms-com (farm/bakery).
+     screenshot. Stores I manage (5): chuggo, zuumees, monavie, healthypetz, lashbabe.
+     Featured (3): babydelight, omadagolf, stencilstop.
+     More work grid: joovy, zenbodi, electrogum, phantomfarms (brewing),
+     phantomfarms-com (farm/bakery).
      If a video is missing, the screenshot stays — nothing breaks.
      See README.md for how to record and compress them.
 
@@ -80,7 +81,7 @@ ul{list-style:none}
 
   --maxw:1200px;
   --gutter:clamp(20px,5vw,48px);
-  --section:clamp(88px,11vw,168px);
+  --section:clamp(72px,8.5vw,128px);
   --r:2px;
 }
 
@@ -422,6 +423,34 @@ section{position:relative;z-index:1;padding-block:var(--section)}
 @media(max-width:1100px){#more .grid-tiles{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){#more .grid-tiles{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){#more .grid-tiles{grid-template-columns:repeat(1,1fr)}}
+/* ---- Stores I manage ---- */
+.own{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:clamp(40px,5vw,64px)}
+.own__i{background:var(--bg);padding:18px 16px;display:flex;flex-direction:column;gap:6px}
+.own__i b{font-family:var(--f-mono);font-size:10px;font-weight:500;letter-spacing:.16em;color:var(--gold)}
+.own__i span{font-family:var(--f-display);font-weight:600;font-size:14px;line-height:1.3}
+@media(max-width:900px){.own{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.own{grid-template-columns:repeat(2,1fr)}}
+#work .tile:not(.tile--cta) .tile__link{height:100%;display:flex;flex-direction:column;padding:12px 12px 22px;
+  background:var(--panel);border:1px solid var(--line);transition:border-color .45s,background .45s,transform .5s cubic-bezier(.2,.8,.2,1)}
+#work .tile:not(.tile--cta) .tile__link:hover{border-color:var(--gold-dim);background:var(--panel-2);transform:translateY(-4px)}
+#work .tile:not(.tile--cta) .tile__link:hover .frame{transform:none;box-shadow:none}
+#work .tile__meta,#work .tile p,#work .tile .stack{padding-inline:8px}
+#work .tile__name{font-size:18px}
+#work .tile .stack{margin:auto 0 0;padding-top:18px;gap:6px}
+#work .chip{font-size:9px;padding:5px 9px;border-color:var(--line-2)}
+#work .frame__badge{color:var(--gold-lt);border-color:var(--gold-dim)}
+#work .grid-tiles{align-items:stretch}
+#why .grid-q{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1024px){#why .grid-q{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){#why .grid-q{grid-template-columns:1fr}}
+#work .tile__stats{display:flex;gap:26px;padding-inline:8px;margin-top:14px;padding-bottom:2px}
+#work .tile__stats b{display:block;font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:-.02em;color:var(--gold-lt);line-height:1.1}
+#work .tile__stats span{display:block;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+.tile--cta .tile__link{height:100%;min-height:260px;display:flex;flex-direction:column;justify-content:center;gap:14px;
+  padding:clamp(28px,3vw,40px);border:1px dashed var(--gold-dim);background:var(--gold-ghost);transition:border-color .4s,background .4s}
+.tile--cta .tile__link:hover{border-color:var(--gold);background:rgba(201,162,39,.12)}
+.tile--cta h3{font-size:22px}
+.tile--cta p{font-size:14px;color:var(--ink-2);margin:0}
 .tile .frame{aspect-ratio:16/11}
 .tile__meta{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:16px}
 .tile__name{font-family:var(--f-display);font-weight:600;font-size:16px}
@@ -684,18 +713,18 @@ section{position:relative;z-index:1;padding-block:var(--section)}
       <div class="hero__copy">
         <div class="pill rv">
           <span class="pill__dot"></span>
-          <span class="eyebrow">Booking Shopify projects — 2 slots open this quarter</span>
+          <span class="eyebrow">Currently running 5 live Shopify stores</span>
         </div>
 
         <h1 class="display rv">
-          Shopify stores, engineered to <span class="serif gold-text">convert</span>.
+          Shopify stores, run to <span class="serif gold-text">grow</span>.
         </h1>
 
         <p class="lead rv">
-          I'm John Paul Guisijan — a Shopify developer and conversion specialist for premium home, lifestyle,
-          and DTC brands across Europe and the US. I build custom-coded storefronts that load fast, feel
-          expensive, and turn more of your existing traffic into revenue. No page builders, no bloated apps —
-          just clean Liquid and a relentless focus on what sells.
+          I'm John Paul Guisijan — a Shopify store and CRO manager for US DTC brands. I don't just
+          build the storefront and hand it over: I run it. Development, CRO and A/B testing, SEO, promotions,
+          and the day-to-day work that keeps a live store earning — owned end to end by one person who
+          writes the code and reads the numbers.
         </p>
 
         <div class="hero__cta rv">
@@ -703,7 +732,7 @@ section{position:relative;z-index:1;padding-block:var(--section)}
             Book a discovery call
             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#work" class="btn btn--ghost">See case studies</a>
+          <a href="#work" class="btn btn--ghost">See stores I run</a>
         </div>
 
         <p class="hero__note rv">
@@ -717,25 +746,25 @@ section{position:relative;z-index:1;padding-block:var(--section)}
         <div class="portrait">
           <div class="portrait__frame"></div>
           <div class="portrait__img">
-            <img src="johnpaul.jpg" alt="John Paul Guisijan, Shopify developer and conversion specialist" width="800" height="1000" fetchpriority="high" decoding="async">
+            <img src="johnpaul.jpg" alt="John Paul Guisijan, Shopify store and CRO manager" width="800" height="1000" fetchpriority="high" decoding="async">
           </div>
-          <div class="portrait__tag">John Paul Guisijan · Shopify Developer</div>
+          <div class="portrait__tag">John Paul Guisijan · Store &amp; CRO Manager</div>
         </div>
         <div class="portrait__creds">
-          <span><b>4+</b> years in Shopify</span>
-          <span><b>UK · EU · US</b> brands</span>
+          <span><b>5+</b> years in Shopify</span>
+          <span><b>US</b> DTC brands</span>
         </div>
       </aside>
     </div>
 
     <div class="marquee rv">
-      <div class="marquee__label">Trusted to build &amp; optimise storefronts for</div>
+      <div class="marquee__label">Trusted to run, build &amp; optimise storefronts for</div>
       <div class="marquee__track" id="marqueeTrack">
-        <span class="marquee__item">Vestnetz</span>
-        <span class="marquee__item">Homirie</span>
-        <span class="marquee__item">Cozey Maison</span>
-        <span class="marquee__item">Requipco</span>
-        <span class="marquee__item">Kopelit</span>
+        <span class="marquee__item">MonaVie</span>
+        <span class="marquee__item">ChugGo</span>
+        <span class="marquee__item">Zuumees</span>
+        <span class="marquee__item">Healthy Petz</span>
+        <span class="marquee__item">Lashbabe</span>
         <span class="marquee__item">Joovy</span>
         <span class="marquee__item">Omada Golf</span>
         <span class="marquee__item">Baby Delight</span>
@@ -753,16 +782,16 @@ section{position:relative;z-index:1;padding-block:var(--section)}
   <div class="wrap">
     <div class="stats rv" id="stats">
       <div class="stat">
-        <div class="stat__k"><span class="counter" data-to="4">0</span>+ yrs</div>
+        <div class="stat__k"><span class="counter" data-to="5">0</span>+ yrs</div>
         <div class="stat__l">Specialised in Shopify</div>
+      </div>
+      <div class="stat">
+        <div class="stat__k"><span class="counter" data-to="5">0</span></div>
+        <div class="stat__l">Live stores I manage day to day</div>
       </div>
       <div class="stat">
         <div class="stat__k"><span class="counter" data-to="15">0</span>+</div>
         <div class="stat__l">Stores built &amp; optimised</div>
-      </div>
-      <div class="stat">
-        <div class="stat__k"><span class="counter" data-to="100">0</span>%</div>
-        <div class="stat__l">Custom-coded — no page builders</div>
       </div>
       <div class="stat">
         <div class="stat__k">&lt;<span class="counter" data-to="24">0</span>h</div>
@@ -772,11 +801,137 @@ section{position:relative;z-index:1;padding-block:var(--section)}
   </div>
 </section>
 
-<!-- ============================== WORK ============================== -->
+<!-- ============================== STORES I MANAGE ============================== -->
 <section id="work" class="band">
   <div class="wrap">
     <div class="sect-head rv">
-      <span class="eyebrow">Featured case studies</span>
+      <span class="eyebrow">Stores I manage</span>
+      <h2 class="sect">Live stores I <span class="serif gold-text">run</span>, not just build.</h2>
+      <p class="lead">These are live US-facing DTC stores I'm responsible for day to day, not one-off projects. Together these brands serve
+        more than 650,000 customers, and I own each storefront end to end, from the code to the conversion rate.</p>
+    </div>
+
+    <div class="own rv">
+      <div class="own__i"><b>01</b><span>Development &amp; fixes</span></div>
+      <div class="own__i"><b>02</b><span>CRO &amp; A/B testing</span></div>
+      <div class="own__i"><b>03</b><span>SEO</span></div>
+      <div class="own__i"><b>04</b><span>Offers &amp; promo launches</span></div>
+      <div class="own__i"><b>05</b><span>Speed &amp; QA</span></div>
+      <div class="own__i"><b>06</b><span>Reporting on what moved</span></div>
+    </div>
+
+    <div class="grid-tiles">
+
+      <article class="tile rv">
+        <a class="tile__link" href="https://monavie.shop/" target="_blank" rel="noopener">
+          <div class="frame" data-video="monavie.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">monavie.shop</span></div>
+            <div class="frame__stage">
+              <div class="frame__ph"><span>MonaVie</span><em>View live site</em></div>
+              <img src="monavie.jpg" alt="MonaVie storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            </div>
+            <div class="frame__scrim"></div>
+            <div class="frame__badge"><span class="pulse"></span> Managing</div>
+          </div>
+          <div class="tile__meta"><span class="tile__name">MonaVie</span><span class="tile__type">Shopify · US</span></div>
+          <div class="tile__stats"><div><b>4.9&#9733;</b><span>Customer rating</span></div><div><b>2005</b><span>Brand since</span></div></div>
+          <p>Açaí wellness shots &amp; bottles sold direct. A subscription-first store: subscribe-and-save offers, tiered bundle pricing, and a funnel I test continuously.</p>
+          <div class="stack"><span class="chip">Subscriptions</span><span class="chip">A/B tests</span><span class="chip">CRO</span><span class="chip">SEO</span></div>
+        </a>
+      </article>
+
+      <article class="tile rv">
+        <a class="tile__link" href="https://trychuggo.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="chuggo.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">trychuggo.com</span></div>
+            <div class="frame__stage">
+              <div class="frame__ph"><span>ChugGo</span><em>View live site</em></div>
+              <img src="chuggo.jpg" alt="ChugGo storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            </div>
+            <div class="frame__scrim"></div>
+            <div class="frame__badge"><span class="pulse"></span> Managing</div>
+          </div>
+          <div class="tile__meta"><span class="tile__name">ChugGo</span><span class="tile__type">Shopify · US</span></div>
+          <div class="tile__stats"><div><b>4.9&#9733;</b><span>Customer rating</span></div><div><b>2,400+</b><span>Reviews</span></div></div>
+          <p>An insulated 3-in-1 can &amp; bottle holder. I took over the live store at launch and run its CRO tests, offers, and seasonal promotions.</p>
+          <div class="stack"><span class="chip">A/B tests</span><span class="chip">Promotions</span><span class="chip">CRO</span><span class="chip">SEO</span></div>
+        </a>
+      </article>
+
+      <article class="tile rv">
+        <a class="tile__link" href="https://getzuumees.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="zuumees.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">getzuumees.com</span></div>
+            <div class="frame__stage">
+              <div class="frame__ph"><span>Zuumees</span><em>View live site</em></div>
+              <img src="zuumees.jpg" alt="Zuumees kids sneakers storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            </div>
+            <div class="frame__scrim"></div>
+            <div class="frame__badge"><span class="pulse"></span> Managing</div>
+          </div>
+          <div class="tile__meta"><span class="tile__name">Zuumees</span><span class="tile__type">Shopify · Kids</span></div>
+          <div class="tile__stats"><div><b>12,400+</b><span>Parents served</span></div><div><b>4.9&#9733;</b><span>Customer rating</span></div></div>
+          <p>Slip-on knit sneakers for kids. On this single-hero-product store I own product-page testing, offers, and sale campaigns.</p>
+          <div class="stack"><span class="chip">Product page</span><span class="chip">A/B tests</span><span class="chip">Promotions</span><span class="chip">SEO</span></div>
+        </a>
+      </article>
+
+      <article class="tile rv">
+        <a class="tile__link" href="https://www.shophealthypetz.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="healthypetz.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">shophealthypetz.com</span></div>
+            <div class="frame__stage">
+              <div class="frame__ph"><span>Healthy Petz</span><em>View live site</em></div>
+              <img src="healthypetz.jpg" alt="Healthy Petz storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            </div>
+            <div class="frame__scrim"></div>
+            <div class="frame__badge"><span class="pulse"></span> Managing</div>
+          </div>
+          <div class="tile__meta"><span class="tile__name">Healthy Petz</span><span class="tile__type">Shopify · Pet health</span></div>
+          <div class="tile__stats"><div><b>50,000+</b><span>Pet parents</span></div><div><b>4.7&#9733;+</b><span>Customer rating</span></div></div>
+          <p>A vet-formulated liquid collagen for dogs. I run its subscription offers, bundle promos, and ongoing CRO and SEO.</p>
+          <div class="stack"><span class="chip">Subscriptions</span><span class="chip">Bundles</span><span class="chip">CRO</span><span class="chip">SEO</span></div>
+        </a>
+      </article>
+
+      <article class="tile rv">
+        <a class="tile__link" href="https://bylashbabe.com/" target="_blank" rel="noopener">
+          <div class="frame" data-video="lashbabe.mp4">
+            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">bylashbabe.com</span></div>
+            <div class="frame__stage">
+              <div class="frame__ph"><span>Lashbabe</span><em>View live site</em></div>
+              <img src="lashbabe.jpg" alt="Lashbabe beauty storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
+            </div>
+            <div class="frame__scrim"></div>
+            <div class="frame__badge"><span class="pulse"></span> Managing</div>
+          </div>
+          <div class="tile__meta"><span class="tile__name">Lashbabe</span><span class="tile__type">Shopify · NL · Beauty</span></div>
+          <div class="tile__stats"><div><b>600,000+</b><span>Customers</span></div><div><b>7,600+</b><span>Trustpilot reviews</span></div></div>
+          <p>Lash, brow &amp; lip beauty from the Netherlands. On this large catalogue I run merchandising, kit and bundle offers, CRO, and SEO.</p>
+          <div class="stack"><span class="chip">Merchandising</span><span class="chip">Bundles</span><span class="chip">CRO</span><span class="chip">SEO</span></div>
+        </a>
+      </article>
+
+      <article class="tile tile--cta rv">
+        <a class="tile__link" href="https://wa.me/639627294885?text=Hi%20John%20Paul%20—%20I'd%20like%20to%20talk%20about%20you%20managing%20my%20Shopify%20store." target="_blank" rel="noopener">
+          <span class="eyebrow">Open seat</span>
+          <h3>Your store could be next.</h3>
+          <p>Need someone to own your Shopify store end to end, from the code to the conversion rate? Let's talk.</p>
+          <span class="link-gold" style="align-self:flex-start">Message me
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </span>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WORK ============================== -->
+<section id="cases">
+  <div class="wrap">
+    <div class="sect-head rv">
+      <span class="eyebrow">Featured builds</span>
       <h2 class="sect">Storefronts built to <span class="serif gold-text">sell</span>.</h2>
       <p class="lead">A close look at three brands I've helped build and grow — infant gear, golf equipment, and
         custom-made products — each engineered around custom development and conversion. Hover to preview; click
@@ -908,92 +1063,15 @@ section{position:relative;z-index:1;padding-block:var(--section)}
     <div class="sect-head rv">
       <span class="eyebrow">More work</span>
       <h2 class="sect">A broader <span class="serif gold-text">body of work</span>.</h2>
-      <p class="lead">More live Shopify storefronts I've built, customised, or optimised — across premium home and
-        lighting brands in the UK and Europe, plus DTC, wellness, and food &amp; beverage. Hover to preview; click any
-        card to visit the store.</p>
+      <p class="lead">More live US Shopify storefronts I've built, customised, or optimised — across juvenile gear,
+        wellness, DTC, and food &amp; beverage. Hover to preview; click any card to visit the store.</p>
     </div>
 
     <div class="grid-tiles">
 
-      <article class="tile rv">
-        <a class="tile__link" href="https://vestnetz.com/" target="_blank" rel="noopener">
-          <div class="frame" data-video="vestnetz.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">vestnetz.com</span></div>
-            <div class="frame__stage">
-              <div class="frame__ph"><span>Vestnetz</span><em>View live site</em></div>
-              <img src="vestnetz.jpg" alt="Vestnetz storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
-            </div>
-            <div class="frame__scrim"></div>
-            <div class="frame__badge"><span class="pulse"></span> Live</div>
-          </div>
-          <div class="tile__meta"><span class="tile__name">Vestnetz</span><span class="tile__type">Shopify · UK</span></div>
-          <p>Premium home, lighting &amp; décor — a conversion-led theme with a trust-first product page and wallet checkout.</p>
-        </a>
-      </article>
 
-      <article class="tile rv">
-        <a class="tile__link" href="https://homirie.com/" target="_blank" rel="noopener">
-          <div class="frame" data-video="homirie.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">homirie.com</span></div>
-            <div class="frame__stage">
-              <div class="frame__ph"><span>Homirie</span><em>View live site</em></div>
-              <img src="homirie.jpg" alt="Homirie storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
-            </div>
-            <div class="frame__scrim"></div>
-            <div class="frame__badge"><span class="pulse"></span> Live</div>
-          </div>
-          <div class="tile__meta"><span class="tile__name">Homirie</span><span class="tile__type">Shopify · IT / EU</span></div>
-          <p>Designer lighting across four markets — tiered volume discounts and localised, multi-currency UX.</p>
-        </a>
-      </article>
 
-      <article class="tile rv">
-        <a class="tile__link" href="https://cozeymaison.com/" target="_blank" rel="noopener">
-          <div class="frame" data-video="cozeymaison.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">cozeymaison.com</span></div>
-            <div class="frame__stage">
-              <div class="frame__ph"><span>Cozey Maison</span><em>View live site</em></div>
-              <img src="cozeymaison.jpg" alt="Cozey Maison storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
-            </div>
-            <div class="frame__scrim"></div>
-            <div class="frame__badge"><span class="pulse"></span> Live</div>
-          </div>
-          <div class="tile__meta"><span class="tile__name">Cozey Maison</span><span class="tile__type">Shopify · NL / EU</span></div>
-          <p>Broad European home &amp; décor catalogue in six languages, with a checkout upsell that lifts order value.</p>
-        </a>
-      </article>
 
-      <article class="tile rv">
-        <a class="tile__link" href="https://requipco.com/" target="_blank" rel="noopener">
-          <div class="frame" data-video="requipco.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">requipco.com</span></div>
-            <div class="frame__stage">
-              <div class="frame__ph"><span>Requipco</span><em>View live site</em></div>
-              <img src="requipco.jpg" alt="Requipco storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
-            </div>
-            <div class="frame__scrim"></div>
-            <div class="frame__badge"><span class="pulse"></span> Live</div>
-          </div>
-          <div class="tile__meta"><span class="tile__name">Requipco</span><span class="tile__type">Shopify · NL</span></div>
-          <p>Climate appliances with a custom product-finder quiz that guides shoppers to the right unit.</p>
-        </a>
-      </article>
-
-      <article class="tile rv">
-        <a class="tile__link" href="https://kopelit.com/" target="_blank" rel="noopener">
-          <div class="frame" data-video="kopelit.mp4">
-            <div class="frame__bar"><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__dot"></span><span class="frame__url">kopelit.com</span></div>
-            <div class="frame__stage">
-              <div class="frame__ph"><span>Kopelit</span><em>View live site</em></div>
-              <img src="kopelit.jpg" alt="Kopelit storefront" loading="lazy" decoding="async" onerror="if(this.src.endsWith(String.fromCharCode(46)+'jpg')){this.src=this.src.slice(0,-3)+'png'}else{this.remove()}">
-            </div>
-            <div class="frame__scrim"></div>
-            <div class="frame__badge"><span class="pulse"></span> Live</div>
-          </div>
-          <div class="tile__meta"><span class="tile__name">Kopelit</span><span class="tile__type">Shopify · UK</span></div>
-          <p>Nordic lighting &amp; garden décor — a content-rich, feature-led theme built around smart-lighting products.</p>
-        </a>
-      </article>
 
       <article class="tile rv">
         <a class="tile__link" href="https://www.joovy.com/" target="_blank" rel="noopener">
@@ -1085,45 +1163,45 @@ section{position:relative;z-index:1;padding-block:var(--section)}
     <div class="sect-head rv">
       <span class="eyebrow">Services</span>
       <h2 class="sect">Everything a growing brand needs to <span class="serif gold-text">sell more</span>.</h2>
-      <p class="lead">End-to-end storefront work — from the code that renders the page to the conversion strategy behind it.</p>
+      <p class="lead">From running the whole store to a single fix, all of it is aimed at the same goal: more of your traffic turning into revenue.</p>
     </div>
 
     <div class="grid-3 rv">
       <article class="svc">
         <span class="svc__n">01</span>
-        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18M7 15l3.5-4 3 2.5L21 7"/></svg>
-        <h3>Conversion Optimization</h3>
-        <p>Data-informed changes to product pages, cart, and checkout that lift the share of visitors who actually buy.</p>
+        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <h3>Store Management</h3>
+        <p>I own your live store day to day: launches, offers, merchandising, fixes, and a weekly read on what's working. One person accountable for the whole storefront.</p>
       </article>
       <article class="svc">
         <span class="svc__n">02</span>
-        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
-        <h3>Speed &amp; Core Web Vitals</h3>
-        <p>Liquid and asset optimisation, lazy loading, and app-stack cleanup — so you stop losing mobile sales to lag.</p>
+        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18M7 15l3.5-4 3 2.5L21 7"/></svg>
+        <h3>CRO &amp; A/B Testing</h3>
+        <p>Hypothesis-led tests on product pages, offers, and cart that I ship, measure, and keep only when they win.</p>
       </article>
       <article class="svc">
         <span class="svc__n">03</span>
-        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>
-        <h3>Theme Customization</h3>
-        <p>Custom Liquid sections and Shopify 2.0 blocks — pixel-accurate, editable by your team, no bloated apps.</p>
+        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <h3>Shopify SEO</h3>
+        <p>Technical SEO, collection and product content, structured data, and site architecture that earn organic traffic you don't pay for.</p>
       </article>
       <article class="svc">
         <span class="svc__n">04</span>
-        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        <h3>UX &amp; Storefront Design</h3>
-        <p>Navigation, hierarchy, and interaction design that make a store feel premium and effortless to shop.</p>
+        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>
+        <h3>Theme Development</h3>
+        <p>Custom Liquid sections and Shopify 2.0 blocks: pixel-accurate, editable by your team, no bloated apps.</p>
       </article>
       <article class="svc">
         <span class="svc__n">05</span>
-        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9 7.8 7.8M16.2 16.2l2.9 2.9M19.1 4.9 16.2 7.8M7.8 16.2l-2.9 2.9"/></svg>
-        <h3>Integrations &amp; Admin API</h3>
-        <p>Shopify Admin API automations, payment flows, analytics, and third-party systems wired cleanly into your stack.</p>
+        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+        <h3>Speed &amp; Core Web Vitals</h3>
+        <p>Liquid and asset optimisation, lazy loading, and app-stack cleanup, so you stop losing mobile sales to lag.</p>
       </article>
       <article class="svc">
         <span class="svc__n">06</span>
-        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-        <h3>Maintenance &amp; Support</h3>
-        <p>Ongoing updates, bug fixes, and monitoring — the quiet work that keeps a live store earning while you sleep.</p>
+        <svg class="svc__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9 7.8 7.8M16.2 16.2l2.9 2.9M19.1 4.9 16.2 7.8M7.8 16.2l-2.9 2.9"/></svg>
+        <h3>Integrations &amp; Apps</h3>
+        <p>Subscriptions, reviews, email, and analytics wired cleanly into your stack, plus Admin API automations where apps fall short.</p>
       </article>
     </div>
   </div>
@@ -1138,15 +1216,15 @@ section{position:relative;z-index:1;padding-block:var(--section)}
         A Shopify partner who thinks like a <span class="serif gold-text">store owner</span>.
       </h2>
       <p class="lead" style="margin-bottom:20px">
-        I'm John Paul Guisijan. For four years I've done one thing: build and grow Shopify stores. Not a bit of
-        everything — Shopify, deeply. Custom Liquid, conversion optimisation, performance, and the checkout and
-        payment work that decides whether traffic turns into orders.
+        I'm John Paul Guisijan. For more than five years I've done one thing: build and grow Shopify stores. I started as a
+        developer, writing custom Liquid, fixing what broke, and speeding up slow themes. Over time the work grew
+        into running the whole store.
       </p>
       <p class="lead" style="margin-bottom:20px">
-        Most of my recent work is with premium home, lighting, and lifestyle brands across the UK and Europe —
-        multi-market, multi-currency storefronts where the details compound: a faster page, a clearer product page,
-        a smarter upsell. I write clean, maintainable code and treat your store as a business that has to make money,
-        not a design exercise.
+        Today I manage live stores for US DTC brands across wellness, pet health, beauty, kids, and lifestyle products.
+        I plan and ship the A/B tests, handle SEO, launch the offers and seasonal promos, and report on what actually
+        moved. Because I can also write the code, nothing waits in a dev queue. I treat your store as a business that
+        has to make money, not a design exercise.
       </p>
       <p class="lead">
         If you already have traffic but too few of those visitors buy, that's exactly the problem I'm built to solve.
@@ -1167,7 +1245,7 @@ section{position:relative;z-index:1;padding-block:var(--section)}
         </li>
         <li>
           <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <div><b>Real timezone overlap</b><span>Daily written updates and overlap hours with US &amp; SG — you're never waiting a full day.</span></div>
+          <div><b>Real timezone overlap</b><span>Daily written updates and overlap hours with US time zones — you're never waiting a full day.</span></div>
         </li>
         <li>
           <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v6H4zM4 14h16v6H4z"/></svg>
@@ -1207,9 +1285,9 @@ section{position:relative;z-index:1;padding-block:var(--section)}
         <p>Every decision is measured against one question: does this help more visitors buy? Product pages, checkout, and speed are tuned to revenue, not vanity.</p>
       </article>
       <article class="pillar rv">
-        <span class="pillar__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/><circle cx="12" cy="12" r="10"/></svg></span>
-        <h3>Built for international brands</h3>
-        <p>Multi-market, multi-currency, multi-language storefronts done properly — the same rigour whether you sell in one country or six.</p>
+        <span class="pillar__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg></span>
+        <h3>I run stores, not just tickets</h3>
+        <p>Development, CRO, A/B tests, SEO, and promos owned by one person. You don't have to coordinate three freelancers to move a number.</p>
       </article>
       <article class="pillar rv">
         <span class="pillar__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
@@ -1301,15 +1379,15 @@ section{position:relative;z-index:1;padding-block:var(--section)}
       </article>
 
       <article class="tier rv">
-        <div class="tier__name">Growth Retainer</div>
+        <div class="tier__name">Store Management</div>
         <div class="tier__price tier__price--range"><span class="cur">$</span>1,500<span class="dash">–</span><span class="cur">$</span>1,700<span class="per">/mo</span></div>
         <div class="tier__from">Monthly · rolling, cancel anytime</div>
-        <p class="tier__desc">Your dedicated Shopify partner on call — continuous development, CRO testing, and improvements that compound month over month.</p>
+        <p class="tier__desc">I run your live store: development, CRO, A/B testing, SEO, and promo launches, with improvements that compound month over month.</p>
         <ul class="tier__list">
-          <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Priority support &amp; rapid fixes</li>
-          <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Continuous A/B testing</li>
-          <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Monthly optimisation sprint</li>
-          <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Reporting on what actually moved</li>
+          <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Day-to-day store ownership &amp; fixes</li>
+          <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Continuous A/B testing &amp; CRO</li>
+          <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>SEO &amp; seasonal promo launches</li>
+          <li><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 5 5L20 6"/></svg>Weekly reporting on what moved</li>
         </ul>
         <a href="#contact" class="btn btn--ghost btn--block">Select engagement</a>
       </article>
@@ -1419,9 +1497,9 @@ section{position:relative;z-index:1;padding-block:var(--section)}
       </div>
     </div>
     <div class="foot__bot">
-      <span>© 2026 John Paul Guisijan — Shopify Growth Engineer</span>
+      <span>© 2026 John Paul Guisijan — Shopify Store &amp; CRO Manager</span>
       <span>WhatsApp +63 962 729 4885 · Telegram @johnpaulguisijan</span>
-      <span>Working with brands across the UK, Europe &amp; the US</span>
+      <span>Running Shopify stores for US DTC brands</span>
     </div>
   </div>
 </footer>
