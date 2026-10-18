@@ -409,6 +409,14 @@ section{position:relative;z-index:1;padding-block:var(--section)}
 .prose strong{color:var(--ink);font-weight:500}
 .split{display:grid;grid-template-columns:4fr 8fr;gap:clamp(40px,6vw,88px)}
 .split__aside{position:sticky;top:120px;align-self:start}
+.split--story{grid-template-columns:5fr 7fr;align-items:start}
+.split--story .sect{font-size:clamp(30px,3.4vw,48px)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px;border-radius:12px;overflow:hidden}
+.facts div{background:var(--panel);padding:20px 22px}
+.facts b{display:block;font-family:var(--f-display);font-weight:800;font-size:clamp(26px,2.4vw,34px);letter-spacing:-.035em;line-height:1;color:var(--gold-lt)}
+.facts span{display:block;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:10px;line-height:1.5}
+.prose--story{max-width:none;padding-top:44px}
+.prose--story p:first-child{font-family:var(--f-display);font-size:clamp(20px,1.9vw,27px);line-height:1.45;letter-spacing:-.015em;color:var(--ink);padding-bottom:26px;border-bottom:1px solid var(--line)}
 .tl{border-top:1px solid var(--line)}
 .tl__item{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--line)}
 .tl__when{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:var(--gold);padding-top:4px}
