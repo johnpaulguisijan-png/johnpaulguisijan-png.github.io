@@ -204,7 +204,8 @@ section{position:relative;z-index:1;padding-block:var(--section)}
 .hero__note{margin-top:28px}
 .hero__note a{color:var(--gold-lt);border-bottom:1px solid var(--gold-dim);padding-bottom:2px;transition:border-color .3s}
 .hero__note a:hover{border-bottom-color:var(--gold)}
-.portrait{position:relative}
+.portrait{position:relative;-webkit-user-select:none;user-select:none}
+.portrait img{-webkit-user-drag:none}
 .portrait__frame{position:absolute;inset:-14px;border:1px solid var(--gold-dim);transform:translate(14px,14px);transition:transform .6s var(--ease);pointer-events:none}
 .portrait:hover .portrait__frame{transform:translate(8px,8px)}
 .portrait__img{aspect-ratio:4/5;overflow:hidden;background:var(--panel-2);position:relative}
@@ -400,7 +401,9 @@ section{position:relative;z-index:1;padding-block:var(--section)}
 .assure span{display:block;font-size:13.5px;color:var(--ink-3);margin-top:2px;line-height:1.55}
 
 /* ============================ About ============================ */
-.about-hero .display{font-size:clamp(40px,5.4vw,78px)}grid-template-columns:1.25fr .75fr;gap:clamp(40px,6vw,96px);align-items:end}
+.about-hero .display{font-size:clamp(40px,5.4vw,78px)}
+.about-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(40px,6vw,96px);align-items:end}
+.about-hero .portrait{justify-self:end}
 .prose{display:grid;gap:22px;max-width:62ch}
 .prose p{font-size:clamp(16px,1.3vw,18.5px);line-height:1.75;color:var(--ink-2)}
 .prose strong{color:var(--ink);font-weight:500}
@@ -474,6 +477,8 @@ section{position:relative;z-index:1;padding-block:var(--section)}
 .rv.in{opacity:1;transform:none}
 
 /* ============================ Responsive ============================ */
+@media (min-width:1700px){:root{--maxw:1400px}}
+@media (min-width:2200px){:root{--maxw:1520px}html{font-size:17px}}
 @media (max-width:1100px){
   .tools__grid{grid-template-columns:repeat(4,1fr)}
   .grid-4{grid-template-columns:repeat(2,1fr)}
@@ -481,6 +486,7 @@ section{position:relative;z-index:1;padding-block:var(--section)}
 }
 @media (max-width:1024px){
   .hero__grid,.about-hero,.contact{grid-template-columns:1fr}
+  .about-hero .portrait{justify-self:start}
   .hero__portrait{max-width:380px;width:100%}
   .process,.split{grid-template-columns:1fr}
   .process__aside,.split__aside{position:static}
